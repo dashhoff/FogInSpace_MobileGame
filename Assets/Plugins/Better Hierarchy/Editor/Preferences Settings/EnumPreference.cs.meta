@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5e5e25f7aaba484bbdce979280dfa5e5
+timeCreated: 1703425699
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272963
+  packageName: Better Hierarchy
+  packageVersion: 1.0.1
+  assetPath: Assets/Plugins/Better Hierarchy/Editor/Preferences Settings/EnumPreference.cs
+  uploadId: 648764

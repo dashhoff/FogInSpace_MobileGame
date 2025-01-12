@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 30aba600666b40418fb75847679dd137
+timeCreated: 1703425684
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272963
+  packageName: Better Hierarchy
+  packageVersion: 1.0.1
+  assetPath: Assets/Plugins/Better Hierarchy/Editor/Preferences Settings/BoolPreference.cs
+  uploadId: 648764

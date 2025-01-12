@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 05c96992c9684d6caf66ebf53271dc88
+timeCreated: 1703705088
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272963
+  packageName: Better Hierarchy
+  packageVersion: 1.0.1
+  assetPath: Assets/Plugins/Better Hierarchy/Editor/Preferences Settings/UIElementBuilder.cs
+  uploadId: 648764

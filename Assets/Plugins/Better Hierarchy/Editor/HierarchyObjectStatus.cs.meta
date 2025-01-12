@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 37bb49c709a940dd8fc8dcbcce20f1ee
+timeCreated: 1703790697
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272963
+  packageName: Better Hierarchy
+  packageVersion: 1.0.1
+  assetPath: Assets/Plugins/Better Hierarchy/Editor/HierarchyObjectStatus.cs
+  uploadId: 648764

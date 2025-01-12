@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1bf7d23f42c106b40a7c6ca6eebaf16b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272963
+  packageName: Better Hierarchy
+  packageVersion: 1.0.1
+  assetPath: Assets/Plugins/Better Hierarchy/Demo Scene/Scripts/UnityNamespaceScript.cs
+  uploadId: 648764

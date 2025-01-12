@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 0c587e0cfc71415fa8f7beb1b844458a
+timeCreated: 1703789629
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272963
+  packageName: Better Hierarchy
+  packageVersion: 1.0.1
+  assetPath: Assets/Plugins/Better Hierarchy/Editor/MouseStatus.cs
+  uploadId: 648764

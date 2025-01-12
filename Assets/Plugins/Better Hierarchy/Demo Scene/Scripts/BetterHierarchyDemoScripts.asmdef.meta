@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 453c12752b21006479a32fd97a93c58e
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 272963
+  packageName: Better Hierarchy
+  packageVersion: 1.0.1
+  assetPath: Assets/Plugins/Better Hierarchy/Demo Scene/Scripts/BetterHierarchyDemoScripts.asmdef
+  uploadId: 648764
