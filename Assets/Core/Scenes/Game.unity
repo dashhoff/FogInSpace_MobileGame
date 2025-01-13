@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 62451857}
   - component: {fileID: 62451856}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +271,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187481005}
   serializedVersion: 4
-  m_Mass: 1000
+  m_Mass: 10
   m_Drag: 0.05
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -285,7 +285,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
@@ -302,6 +302,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b537aa534d8b2144a0a6c181c457696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _engines:
+  - {fileID: 798047644}
+  - {fileID: 1330141339}
+  _staticEngines:
+  - {fileID: 798047644}
+  - {fileID: 1330141339}
+  _rotatingEngines: []
+  _leftEngines:
+  - {fileID: 798047644}
+  _rightEngines:
+  - {fileID: 1330141339}
 --- !u!1 &234605021
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +326,7 @@ GameObject:
   - component: {fileID: 234605024}
   - component: {fileID: 234605023}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1255,6 +1266,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_AllowInstancing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_ResetSeedOnPlay
       value: 1
       objectReference: {fileID: 0}
@@ -1322,16 +1337,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be33941ed82b16d47aa333d68badd535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isActive: 1
+  _isActive: 0
   _isStatic: 1
   _forsageMode: 0
   _forcemultiplier: 2
   _overheated: 0
-  _power: 10
+  _power: 50
   _startEndurance: 100
   _endurance: 100
-  _overheatingSpeed: 0.25
-  _coolingSpeed: 0.25
+  _overheatingSpeed: 0.1
+  _coolingSpeed: 0.1
+  _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1728096447}
 --- !u!1 &832575517
 GameObject:
@@ -1533,6 +1549,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_AllowInstancing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_ResetSeedOnPlay
       value: 1
       objectReference: {fileID: 0}
@@ -1605,16 +1625,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be33941ed82b16d47aa333d68badd535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isActive: 1
+  _isActive: 0
   _isStatic: 1
   _forsageMode: 0
   _forcemultiplier: 2
   _overheated: 0
-  _power: 10
+  _power: 50
   _startEndurance: 100
   _endurance: 100
-  _overheatingSpeed: 0.25
-  _coolingSpeed: 0.25
+  _overheatingSpeed: 0.1
+  _coolingSpeed: 0.1
+  _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1307256176}
 --- !u!1 &1491212486
 GameObject:

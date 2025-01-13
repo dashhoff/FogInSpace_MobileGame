@@ -28,6 +28,9 @@ public class Engine : MonoBehaviour
     [SerializeField] private float _coolingSpeed = 0.25f;
 
     [Space(20f)]
+    [SerializeField] private Rigidbody _shipRb;
+
+    [Space(20f)]
     [SerializeField] private VisualEffect _engineEffect;
 
     private void FixedUpdate()
@@ -48,6 +51,16 @@ public class Engine : MonoBehaviour
     public void RotateEngine()
     {
 
+    }
+
+    public void StartForsage()
+    {
+        _forsageMode = true;
+    }
+
+    public void StopForsage()
+    {
+        _forsageMode = false;
     }
 
     private void EngineCycle()
@@ -74,6 +87,13 @@ public class Engine : MonoBehaviour
                 _endurance -= _overheatingSpeed * _forcemultiplier;
             else
                 _endurance -= _overheatingSpeed;
+
+            Vector3 forceDirection = transform.up;
+
+            if (_forsageMode)
+                _shipRb.AddForceAtPosition(forceDirection * _power * _forcemultiplier, transform.position, ForceMode.Force);
+            else
+                _shipRb.AddForceAtPosition(forceDirection * _power, transform.position, ForceMode.Force);
 
             _engineEffect.Play();
         }
