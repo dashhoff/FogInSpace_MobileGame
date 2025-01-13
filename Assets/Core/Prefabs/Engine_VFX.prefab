@@ -50,11 +50,17 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 3
+        m_Name: Size_1
+        m_Overridden: 1
     m_Vector2f:
       m_Array:
       - m_Value: {x: 250, y: 2500}
         m_Name: Rate 2
+        m_Overridden: 1
+      - m_Value: {x: 100, y: 250}
+        m_Name: Rate_1
         m_Overridden: 1
     m_Vector3f:
       m_Array: []
