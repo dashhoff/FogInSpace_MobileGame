@@ -35,8 +35,8 @@ public class Engine : MonoBehaviour
     [SerializeField][Range(0, 100)][Min(0)] private float _hp = 100;
 
     [Space(10f)]
-    [SerializeField] private float _damageSpeed = 0.1f;
-    [SerializeField] private float _repairingSpeed = 0.02f;
+    [SerializeField] private float _damageSpeed = 0.01f;
+    [SerializeField] private float _repairingSpeed = 0.005f;
 
     [Space(20f)]
     [SerializeField] private Rigidbody _shipRb;
@@ -79,6 +79,8 @@ public class Engine : MonoBehaviour
         if (_hp <= 0)
         {
             _broken = true;
+
+            DestroyEngine();
         }
 
         if (_endurance <= 0)
@@ -88,12 +90,12 @@ public class Engine : MonoBehaviour
 
         if (_broken)
         {
-            RepaireEngine();
+            /*RepaireEngine();
 
             if (_hp > _startHP / 5)
             {
                 _broken = false;
-            }
+            }*/
         }
 
         if (_overheated)
@@ -102,7 +104,7 @@ public class Engine : MonoBehaviour
 
             _engineEffect.Stop();
 
-            if (_endurance > _startEndurance / 3)
+            if (_endurance > _startEndurance / 2)
             {
                 _overheated = false;
             }
@@ -118,7 +120,7 @@ public class Engine : MonoBehaviour
             if (_forsageMode)
             {
                 _shipRb.AddForceAtPosition(forceDirection * _power * _forcemultiplier, transform.position, ForceMode.Force);
-                DamageEngine();
+                SelfDamageEngine();
             }
             else
             {
@@ -154,9 +156,14 @@ public class Engine : MonoBehaviour
             _endurance = _startEndurance;
     }
 
-    private void DamageEngine()
+    private void SelfDamageEngine()
     {
         _hp -= _damageSpeed;
+    }
+
+    public void GetDamage(float value)
+    {
+        _hp += value;
     }
 
     private void RepaireEngine()
@@ -166,6 +173,11 @@ public class Engine : MonoBehaviour
         else
             _hp = _startHP;
     }
+
+    public void DestroyEngine()
+    {
+        Destroy(gameObject);
+    } 
 
     public float GetEndurance()
     {

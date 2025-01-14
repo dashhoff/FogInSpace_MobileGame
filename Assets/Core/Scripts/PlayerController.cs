@@ -1,8 +1,9 @@
 using UnityEngine;
 
-
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+
     [SerializeField] private Engine[] _engines;
 
     [SerializeField] private Engine[] _staticEngines;
@@ -10,6 +11,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Engine[] _leftEngines;
     [SerializeField] private Engine[] _rightEngines;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Update()
     {
