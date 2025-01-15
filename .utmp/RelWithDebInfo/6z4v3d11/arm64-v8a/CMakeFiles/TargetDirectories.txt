@@ -1,0 +1,8 @@
+C:/Unity/Projects/FogInSpace_MobileGame/.utmp/RelWithDebInfo/6z4v3d11/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Unity/Projects/FogInSpace_MobileGame/.utmp/RelWithDebInfo/6z4v3d11/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Unity/Projects/FogInSpace_MobileGame/.utmp/RelWithDebInfo/6z4v3d11/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Unity/Projects/FogInSpace_MobileGame/.utmp/RelWithDebInfo/6z4v3d11/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Unity/Projects/FogInSpace_MobileGame/.utmp/RelWithDebInfo/6z4v3d11/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/Unity/Projects/FogInSpace_MobileGame/.utmp/RelWithDebInfo/6z4v3d11/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Unity/Projects/FogInSpace_MobileGame/.utmp/RelWithDebInfo/6z4v3d11/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Unity/Projects/FogInSpace_MobileGame/.utmp/RelWithDebInfo/6z4v3d11/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

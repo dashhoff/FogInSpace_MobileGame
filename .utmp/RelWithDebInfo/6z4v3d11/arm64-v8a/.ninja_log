@@ -1,0 +1,23 @@
+# ninja log v5
+46	619	7586579171885589	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5b172fabb9033336
+15	4486	7586579209277581	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	553436bf29c843cc
+621	2426	7586579186564537	C:/Unity/Projects/FogInSpace_MobileGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6z4v3d11/obj/arm64-v8a/libswappywrapper.so	ff9b74b4608f6dda
+24	3262	7586579197696870	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	546c18228585cf7
+19	4710	7586579213327740	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	7c5d8ada1c7df769
+41	3431	7586579199457448	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2e017fd8258235d5
+2	4322	7586579206706413	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	192c430a05eda411
+37	3433	7586579199831006	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	964f069d466bf3ef
+28	4888	7586579214275506	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	79f36e292e16d025
+32	5347	7586579218829222	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	69c75f5ce00b329c
+5347	5592	7586579221973768	C:/Unity/Projects/FogInSpace_MobileGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6z4v3d11/obj/arm64-v8a/libgame.so	12410063bae68cde
+52	334	7586598877956746	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5b172fabb9033336
+334	833	7586598881729149	C:/Unity/Projects/FogInSpace_MobileGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6z4v3d11/obj/arm64-v8a/libswappywrapper.so	ff9b74b4608f6dda
+41	1612	7586598890679439	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	79f36e292e16d025
+12	1623	7586598890679439	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	546c18228585cf7
+36	1651	7586598891054740	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	964f069d466bf3ef
+27	1700	7586598891531575	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	7c5d8ada1c7df769
+17	1902	7586598893515184	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	192c430a05eda411
+46	1946	7586598893991777	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2e017fd8258235d5
+32	2246	7586598897029548	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	69c75f5ce00b329c
+22	2390	7586598898470422	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	553436bf29c843cc
+2390	2489	7586598899417494	C:/Unity/Projects/FogInSpace_MobileGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6z4v3d11/obj/arm64-v8a/libgame.so	12410063bae68cde

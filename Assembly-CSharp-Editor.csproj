@@ -1419,6 +1419,10 @@
       <Project>{49F85C5F-BC23-CA60-5A1E-693770CEC584}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="Tayx.Graphy.csproj">
+      <Project>{FB5E8872-A639-53F1-4864-58848F1DBBF2}</Project>
+      <Name>Tayx.Graphy</Name>
+    </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Test.csproj">
       <Project>{7EBC2A93-B8A9-945F-B433-B2A89DF4EC5C}</Project>
       <Name>NaughtyAttributes.Test</Name>
@@ -1446,6 +1450,10 @@
     <ProjectReference Include="IngameDebugConsole.Editor.csproj">
       <Project>{72BF523F-2A25-E2BC-6C61-1C97BC5E7F28}</Project>
       <Name>IngameDebugConsole.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Tayx.Graphy.Editor.csproj">
+      <Project>{A3095C97-E7F5-6925-A887-A4BC6F04B23F}</Project>
+      <Name>Tayx.Graphy.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
