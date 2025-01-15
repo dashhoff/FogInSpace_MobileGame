@@ -1,28 +1,27 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class ArcadePlayerController : MonoBehaviour
 {
-    public static PlayerController Instance;
+    public static ArcadePlayerController Instance;
 
     [Space(20f)]
     [SerializeField] private Engine[] _engines;
 
-    [SerializeField] private Engine[] _staticEngines;
-    [SerializeField] private Engine[] _rotatingEngines;
-
+    [SerializeField] private Engine[] _mainEngines;
     [SerializeField] private Engine[] _leftEngines;
     [SerializeField] private Engine[] _rightEngines;
+    [SerializeField] private Engine[] _backEngines;
 
-    [Header("Двигатели для джойстика")]
-    [SerializeField] private Engine[] _WEngines;
-    [SerializeField] private Engine[] _AEngines;
-    [SerializeField] private Engine[] _SEngines;
-    [SerializeField] private Engine[] _DEngines; 
+    [Space(20f)]
+    [SerializeField] private Rigidbody _rb;
+
+    [Space(20f)]
+    [SerializeField] private float _power;
+    [SerializeField] private float _powerPercentage;
 
     [Space(20f)]
     [SerializeField] private Joystick _joystick;
     [SerializeField] private bool _keyboardActive;
-
 
     private void Awake()
     {
@@ -32,9 +31,19 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void FixedUpdate()
+    {
+        MainCycle();
+    }
+
     private void Update()
     {
         PlayerInput();
+    }
+
+    private void MainCycle()
+    {
+
     }
 
     private void PlayerInput()
@@ -58,11 +67,17 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.W))
             {
-                OnStaticEngines();
+                foreach (Engine engine in _mainEngines)
+                {
+                    OnEngine(engine, 1);
+                }
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
-                OffStaticEngines();
+                foreach (Engine engine in _mainEngines)
+                {
+                    OnEngine(engine, 1);
+                }
             }
 
             if (Input.GetKeyDown(KeyCode.Q))
@@ -88,7 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             if (_joystick.Vertical > _joystick.DeadZone)
             {
-                foreach (Engine engine in _WEngines)
+                foreach (Engine engine in _mainEngines)
                 {
                     OnEngine(engine, _joystick.Vertical);
                 }
@@ -114,24 +129,6 @@ public class PlayerController : MonoBehaviour
     {
         engine.SetPowerPercentage(0);
         engine.StopEngine();
-    }
-
-    public void OnStaticEngines()
-    {
-        foreach (Engine engine in _staticEngines)
-        {
-            OnEngine(engine, 1);
-            //engine.StartEngine();
-        }
-    }
-
-    public void OffStaticEngines()
-    {
-        foreach (Engine engine in _staticEngines)
-        {
-            OffEngine(engine);
-            //engine.StopEngine();
-        }
     }
 
     public void OnLeftEngines()
