@@ -79,37 +79,29 @@ public class ArcadePlayerController : MonoBehaviour
                     OnEngine(engine, 1);
                 }
             }
-
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                OnRightEngines();
-            }
-            if (Input.GetKeyUp(KeyCode.Q))
-            {
-                OffRightEngines();
-            }
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                OnLeftEngines();
-            }
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                OffLeftEngines();
-            }
         }
 
         if (!_keyboardActive)
         {
             if (_joystick.Vertical > _joystick.DeadZone)
             {
-                foreach (Engine engine in _mainEngines)
-                {
-                    OnEngine(engine, _joystick.Vertical);
-                }
+                GoForward();
+            }
+            if (_joystick.Vertical < -_joystick.DeadZone)
+            {
+                GoBack();
             }
 
-            if (_joystick.Horizontal < _joystick.DeadZone && _joystick.Vertical < _joystick.DeadZone)
+            if (_joystick.Horizontal > _joystick.DeadZone)
+            {
+                GoRight();
+            }
+            if (_joystick.Horizontal < -_joystick.DeadZone)
+            {
+                GoLeft();
+            }
+
+            if (_joystick.Horizontal == 0 && _joystick.Vertical == 0)
             {
                 foreach (Engine engine in _engines)
                 {
@@ -131,39 +123,55 @@ public class ArcadePlayerController : MonoBehaviour
         engine.StopEngine();
     }
 
-    public void OnLeftEngines()
-    {
-        foreach (Engine engine in _leftEngines)
-        {
-            OnEngine(engine, 1);
-            //engine.StartEngine();
-        }
-    }
-
-    public void OffLeftEngines()
+    public void GoLeft()
     {
         foreach (Engine engine in _leftEngines)
         {
             OffEngine(engine);
-            //engine.StopEngine();
         }
-    }
 
-    public void OnRightEngines()
-    {
         foreach (Engine engine in _rightEngines)
         {
-            OnEngine(engine, 1);
-            //engine.StartEngine();
+            OnEngine(engine, -_joystick.Horizontal);
         }
     }
 
-    public void OffRightEngines()
+    public void GoRight()
     {
         foreach (Engine engine in _rightEngines)
         {
             OffEngine(engine);
-            //engine.StopEngine();
+        }
+
+        foreach (Engine engine in _leftEngines)
+        {
+            OnEngine(engine, _joystick.Horizontal);
+        }
+    }
+
+    public void GoForward()
+    {
+        foreach (Engine engine in _backEngines)
+        {
+            OffEngine(engine);
+        }
+
+        foreach (Engine engine in _mainEngines)
+        {
+            OnEngine(engine, _joystick.Vertical);
+        }
+    }
+
+    public void GoBack()
+    {
+        foreach (Engine engine in _mainEngines)
+        {
+            OffEngine(engine);
+        }
+
+        foreach (Engine engine in _backEngines)
+        {
+            OnEngine(engine, -_joystick.Vertical);
         }
     }
 }
