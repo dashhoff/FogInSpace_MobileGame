@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Core/Scenes/Menu.unity
     guid: 9373bcec97f029f458fbd75213579097
   - enabled: 1
-    path: Assets/Core/Scenes/Game.unity
+    path: Assets/Core/Scenes/Space.unity
+    guid: d40ab6bb7e0dc204cb07a9f155441828
+  - enabled: 1
+    path: Assets/Core/Scenes/Landing.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: cdb24dec95cccf1428d8d0c4eae9adc4, type: 2}

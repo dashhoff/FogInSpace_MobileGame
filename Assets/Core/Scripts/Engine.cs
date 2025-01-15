@@ -21,6 +21,7 @@ public class Engine : MonoBehaviour
 
     [Space(20f)]
     [SerializeField] private float _power = 50f;
+    [SerializeField] private float _powerPercentage = 100;
 
     [Space(20f)]
     [SerializeField] private float _startEndurance = 100f;
@@ -47,6 +48,11 @@ public class Engine : MonoBehaviour
     private void FixedUpdate()
     {
         EngineCycle();
+    }
+
+    public void SetPowerPercentage(float value)
+    {
+        _powerPercentage = value;
     }
 
     public void StartEngine()
@@ -119,12 +125,16 @@ public class Engine : MonoBehaviour
 
             if (_forsageMode)
             {
-                _shipRb.AddForceAtPosition(forceDirection * _power * _forcemultiplier, transform.position, ForceMode.Force);
+                float finalPower = _power * _forcemultiplier * _powerPercentage;
+
+                _shipRb.AddForceAtPosition(forceDirection * finalPower, transform.position, ForceMode.Force);
                 SelfDamageEngine();
             }
             else
             {
-                _shipRb.AddForceAtPosition(forceDirection * _power, transform.position, ForceMode.Force);
+                float finalPower = _power * _powerPercentage;
+
+                _shipRb.AddForceAtPosition(forceDirection * finalPower, transform.position, ForceMode.Force);
                 RepaireEngine();
             }
 
