@@ -6561,6 +6561,10 @@ MonoBehaviour:
   _repairingSpeed: 0
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1728096447}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 0.01
+  _maxSpeedVFX: 0.1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6913,6 +6917,10 @@ MonoBehaviour:
   _repairingSpeed: 0
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1307256176}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 0.01
+  _maxSpeedVFX: 0.1
 --- !u!1 &1344034132
 GameObject:
   m_ObjectHideFlags: 0
