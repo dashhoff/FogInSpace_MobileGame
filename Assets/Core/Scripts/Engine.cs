@@ -43,7 +43,16 @@ public class Engine : MonoBehaviour
     [SerializeField] private Rigidbody _shipRb;
 
     [Space(20f)]
+    [Header("VFX")]
     [SerializeField] private VisualEffect _engineEffect;
+
+    [Space(5f)]
+    [SerializeField] private float _minLifeTimeVFX = 0.01f;
+    [SerializeField] private float _maxLifeTimeVFX = 0.1f;
+
+    [Space(5f)]
+    [SerializeField] private float _minSpeedVFX = 0.01f;
+    [SerializeField] private float _maxSpeedVFX = 0.1f;
 
     private void FixedUpdate()
     {
@@ -138,6 +147,8 @@ public class Engine : MonoBehaviour
                 RepaireEngine();
             }
 
+            SetLifeTimeVFX();
+            SetSpeedVFX();
             _engineEffect.Play();
         }
         else
@@ -171,7 +182,7 @@ public class Engine : MonoBehaviour
         _hp -= _damageSpeed;
     }
 
-    public void GetDamage(float value)
+    public void DamageEngine(float value)
     {
         _hp += value;
     }
@@ -197,5 +208,25 @@ public class Engine : MonoBehaviour
     public float GetHP()
     {
         return _hp;
+    }
+
+    public void SetLifeTimeVFX()
+    {
+        Vector2 newLifeTime = new Vector2(_minLifeTimeVFX, _maxLifeTimeVFX * _powerPercentage);
+
+        if (_forsageMode)
+            newLifeTime = new Vector2(_minLifeTimeVFX, newLifeTime.y * _forcemultiplier);
+
+        _engineEffect.SetVector2("LifeTime", newLifeTime);
+    }
+
+    public void SetSpeedVFX()
+    {
+        Vector2 newSpeed = new Vector2(_minSpeedVFX * _powerPercentage, _maxSpeedVFX * _powerPercentage);
+
+        if (_forsageMode)
+            newSpeed = new Vector2(newSpeed.x * _forcemultiplier, newSpeed.y * _forcemultiplier);
+
+        _engineEffect.SetVector2("Speed", newSpeed);
     }
 }

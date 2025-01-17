@@ -395,6 +395,30 @@ PrefabInstance:
       propertyPath: m_InitialEventNameOverriden
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Name
+      value: LifeTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7984712934278502686, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_Name
       value: Engine_VFX
@@ -473,6 +497,30 @@ PrefabInstance:
     - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_InitialEventNameOverriden
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Name
+      value: LifeTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Overridden
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7984712934278502686, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_Name
@@ -1599,7 +1647,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1636,7 +1684,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 4500
+  m_ColorTemperature: 4750
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -1749,6 +1797,10 @@ MonoBehaviour:
   _repairingSpeed: 0
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1424704948}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 25
+  _maxSpeedVFX: 50
 --- !u!1 &439278655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,6 +3233,30 @@ PrefabInstance:
       propertyPath: m_InitialEventNameOverriden
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Name
+      value: LifeTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7984712934278502686, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_Name
       value: Engine_VFX
@@ -3799,6 +3875,10 @@ MonoBehaviour:
   _repairingSpeed: 0
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1728096447}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 25
+  _maxSpeedVFX: 50
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -5588,8 +5668,8 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 41773954}
   - {fileID: 553864921}
+  - {fileID: 41773954}
   m_Father: {fileID: 187481006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &1260012864
@@ -5622,6 +5702,10 @@ MonoBehaviour:
   _repairingSpeed: 0
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 41773955}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 25
+  _maxSpeedVFX: 50
 --- !u!1001 &1269166692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5685,6 +5769,30 @@ PrefabInstance:
     - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_InitialEventNameOverriden
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Name
+      value: LifeTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Overridden
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7984712934278502686, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_Name
@@ -5838,8 +5946,8 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 25911952}
   - {fileID: 726428676}
+  - {fileID: 25911952}
   m_Father: {fileID: 187481006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1306258126
@@ -5872,6 +5980,10 @@ MonoBehaviour:
   _repairingSpeed: 0
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 25911953}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 25
+  _maxSpeedVFX: 50
 --- !u!2083052967 &1307256176 stripped
 VisualEffect:
   m_CorrespondingSourceObject: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
@@ -5907,8 +6019,8 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 646346852}
   - {fileID: 234605022}
+  - {fileID: 646346852}
   m_Father: {fileID: 187481006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1330141339
@@ -5941,6 +6053,10 @@ MonoBehaviour:
   _repairingSpeed: 0
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1307256176}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 25
+  _maxSpeedVFX: 50
 --- !u!1001 &1424704946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6004,6 +6120,30 @@ PrefabInstance:
     - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_InitialEventNameOverriden
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Name
+      value: LifeTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Overridden
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7984712934278502686, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_Name
@@ -6164,6 +6304,10 @@ MonoBehaviour:
   _repairingSpeed: 0
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1796367286}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 25
+  _maxSpeedVFX: 50
 --- !u!1 &1677109319
 GameObject:
   m_ObjectHideFlags: 0
@@ -6521,6 +6665,30 @@ PrefabInstance:
     - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_InitialEventNameOverriden
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Name
+      value: LifeTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Value.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4017900778123454327, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
+      propertyPath: m_PropertySheet.m_Vector2f.m_Array.Array.data[2].m_Overridden
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7984712934278502686, guid: 54900b58d3de4814cbba73425cfff6b2, type: 3}
       propertyPath: m_Name

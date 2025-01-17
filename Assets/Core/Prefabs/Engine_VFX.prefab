@@ -62,6 +62,9 @@ VisualEffect:
       - m_Value: {x: 100, y: 250}
         m_Name: Rate_1
         m_Overridden: 1
+      - m_Value: {x: 25, y: 50}
+        m_Name: Speed
+        m_Overridden: 0
     m_Vector3f:
       m_Array: []
     m_Vector4f:
