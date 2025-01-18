@@ -1531,7 +1531,11 @@ MonoBehaviour:
   _repairingSpeed: 0.005
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1728096447}
---- !u!1 &832575517
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 0.01
+  _maxSpeedVFX: 0.1
+--- !u!1 &869833169
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1539,22 +1543,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 832575519}
-  - component: {fileID: 832575518}
-  m_Layer: 6
+  - component: {fileID: 869833170}
+  - component: {fileID: 869833171}
+  m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &832575518
+--- !u!4 &869833170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869833169}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7000003, y: 5000, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2086851783}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &869833171
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832575517}
+  m_GameObject: {fileID: 869833169}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
@@ -1564,22 +1583,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
---- !u!4 &832575519
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832575517}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2086851783}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  sharedProfile: {fileID: 11400000, guid: f60a9399a51b469438322ea67be0c6ef, type: 2}
 --- !u!1 &1152728034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2329,6 +2333,10 @@ MonoBehaviour:
   _repairingSpeed: 0.005
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1307256176}
+  _minLifeTimeVFX: 0.01
+  _maxLifeTimeVFX: 0.1
+  _minSpeedVFX: 0.01
+  _maxSpeedVFX: 0.1
 --- !u!1 &1491212486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,8 +2475,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330585546}
+  - {fileID: 869833170}
   - {fileID: 410087041}
-  - {fileID: 832575519}
   - {fileID: 187481006}
   - {fileID: 1491212487}
   m_Father: {fileID: 0}
