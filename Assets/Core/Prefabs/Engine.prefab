@@ -61,6 +61,7 @@ MonoBehaviour:
   _hp: 100
   _damageSpeed: 0
   _repairingSpeed: 0
+  _model: {fileID: 0}
   _shipRb: {fileID: 6772119412331584868}
   _engineEffect: {fileID: 1065065529335285096}
   _minLifeTimeVFX: 0.01
@@ -180,7 +181,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1001 &4108879406684660255
 PrefabInstance:
