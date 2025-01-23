@@ -7,6 +7,9 @@ public class ArcadePlayerController : MonoBehaviour
     [Space(20f)]
     [SerializeField] private Engine[] _engines;
 
+    [SerializeField] private Engine[] _staticEngines;
+    [SerializeField] private Engine[] _rotatingEngines;
+
     [SerializeField] private Engine[] _mainEngines;
     [SerializeField] private Engine[] _leftEngines;
     [SerializeField] private Engine[] _rightEngines;
@@ -85,11 +88,11 @@ public class ArcadePlayerController : MonoBehaviour
         {
             if (_joystick.Vertical > _joystick.DeadZone)
             {
-                GoForward();
+                GoUp();
             }
             if (_joystick.Vertical < -_joystick.DeadZone)
             {
-                GoBack();
+                GoDown();
             }
 
             if (_joystick.Horizontal > _joystick.DeadZone)
@@ -149,7 +152,7 @@ public class ArcadePlayerController : MonoBehaviour
         }
     }
 
-    public void GoForward()
+    public void GoUp()
     {
         foreach (Engine engine in _backEngines)
         {
@@ -162,7 +165,7 @@ public class ArcadePlayerController : MonoBehaviour
         }
     }
 
-    public void GoBack()
+    public void GoDown()
     {
         foreach (Engine engine in _mainEngines)
         {

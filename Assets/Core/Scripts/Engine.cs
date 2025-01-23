@@ -40,6 +40,7 @@ public class Engine : MonoBehaviour
     [SerializeField] private float _repairingSpeed = 0.005f;
 
     [Space(20f)]
+    [SerializeField] private GameObject _model;
     [SerializeField] private Rigidbody _shipRb;
 
     [Space(20f)]

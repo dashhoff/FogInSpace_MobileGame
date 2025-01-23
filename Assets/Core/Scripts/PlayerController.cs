@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Joystick _joystick;
     [SerializeField] private bool _keyboardActive;
 
-
     private void Awake()
     {
         if (Instance == null)
