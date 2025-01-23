@@ -7,6 +7,7 @@ public class ArcadePlayerController : MonoBehaviour
     [Space(20f)]
     [SerializeField] private Engine[] _engines;
 
+    [SerializeField] private Engine[] _staticEngines;
     [SerializeField] private Engine[] _rotatingEngines;
 
     [SerializeField] private Engine[] _mainEngines;

@@ -1529,6 +1529,7 @@ MonoBehaviour:
   _hp: 100
   _damageSpeed: 0.01
   _repairingSpeed: 0.005
+  _model: {fileID: 0}
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1728096447}
   _minLifeTimeVFX: 0.01
@@ -2331,6 +2332,7 @@ MonoBehaviour:
   _hp: 100
   _damageSpeed: 0.01
   _repairingSpeed: 0.005
+  _model: {fileID: 0}
   _shipRb: {fileID: 187481007}
   _engineEffect: {fileID: 1307256176}
   _minLifeTimeVFX: 0.01
