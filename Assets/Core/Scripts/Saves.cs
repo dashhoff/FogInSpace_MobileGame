@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class Saves : MonoBehaviour
 {
-    public static string Language = "ru";
+    public static Saves Instance;
 
     private void Awake()
     {
-        Application.targetFrameRate = 120;
+        if(Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 }

@@ -16,19 +16,21 @@ public class DynamicResolution : MonoBehaviour
     private float MaxFPSS;
     public float Delay;
     private float DelayTime;
-    // Use this for initialization
-    void Start()
+
+    private void Start()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 120;
+        Application.targetFrameRate = 75;
         MainRes = new Vector2(Screen.width, Screen.height);
+
         DelayTime = Delay;
+
         MinFPSS = 1f / (float)MinFPS;
         MaxFPSS = 1f / (float)MaxFPS;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Time.time > DelayTime)
         {
@@ -49,6 +51,13 @@ public class DynamicResolution : MonoBehaviour
                 DelayTime = Time.time + Delay;
             }
             DelayTime = Time.time + 0.5f;
+        }
+
+        if (CurScale < MinScale)
+        {
+            CurScale = ScaleStep;
+            Screen.SetResolution((int)(MainRes.x * CurScale), (int)(MainRes.y * CurScale), true);
+            DelayTime = Time.time + Delay;
         }
 
         _screenText.text = "X " + Screen.width + " / Y " + Screen.height + " / scale " + CurScale + " / " + Time.deltaTime;
