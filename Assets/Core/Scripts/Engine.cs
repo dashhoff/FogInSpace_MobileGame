@@ -7,35 +7,30 @@ public class Engine : MonoBehaviour
     [SerializeField] private bool _isActive = false;
 
     [Space(10f)]
-    [SerializeField] private bool _isStatic = true;
+    [SerializeField] private bool _isStatic;
 
+    [SerializeField] private bool _isRotating;
+    [SerializeField] private float _rotatingSpeed;
+
+    [Header("Settings")]
     [Space(10f)]
     [SerializeField] private bool _forsageMode = false;
     [SerializeField] private float _forcemultiplier = 2f;
-
-    [Space(10f)]
-    [SerializeField] private bool _overheated = false;
-
-    [Space(10f)]
-    [SerializeField] private bool _broken = false;
-
     [Space(20f)]
     [SerializeField] private float _power = 50f;
     [SerializeField] private float _powerPercentage = 100;
 
-    [Space(20f)]
+    [Space(10f)]
+    [SerializeField] private bool _overheated = false;
     [SerializeField] private float _startEndurance = 100f;
     [SerializeField][Range(0, 100)][Min(0)] private float _endurance = 100;
-
-    [Space(10f)]
     [SerializeField] private float _overheatingSpeed = 0.05f;
     [SerializeField] private float _coolingSpeed = 0.1f;
 
-    [Space(20f)]
+    [Space(10f)]
+    [SerializeField] private bool _broken = false;
     [SerializeField] private float _startHP = 100f;
     [SerializeField][Range(0, 100)][Min(0)] private float _hp = 100;
-
-    [Space(10f)]
     [SerializeField] private float _damageSpeed = 0.01f;
     [SerializeField] private float _repairingSpeed = 0.005f;
 
@@ -75,9 +70,17 @@ public class Engine : MonoBehaviour
         _isActive = false;
     }
 
-    public void RotateEngine()
+    public void RotateEngine(Vector2 targetDirection)
     {
+        // ¬ычисление угла между текущим направлением и целевым
+        float targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
 
+        // ѕлавное вращение двигател€
+        float newAngle = Mathf.MoveTowardsAngle(
+            _model.transform.eulerAngles.z, targetAngle, _rotatingSpeed * Time.deltaTime);
+
+        // ”становка нового угла вращени€
+        _model.transform.rotation = Quaternion.Euler(0, 0, newAngle);
     }
 
     public void StartForsage()
@@ -131,7 +134,7 @@ public class Engine : MonoBehaviour
         {
             OverheatidEngine();
 
-            Vector3 forceDirection = transform.up;
+            Vector2 forceDirection = transform.forward;
 
             if (_forsageMode)
             {
