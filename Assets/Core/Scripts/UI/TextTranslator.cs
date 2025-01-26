@@ -13,7 +13,7 @@ public class TextTranslator : MonoBehaviour
         if (_targetText == null)
             _targetText = GetComponent<TMP_Text>();
 
-        if (Saves.Language == "ru")
+        if (Settings.Language == "ru")
             _targetText.text = _ruText;
         else
             _targetText.text = _enText;
