@@ -28,6 +28,14 @@ public class ArcadePlayerController : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        foreach (Engine engine in _engines)
+        {
+            engine.SetPower(_power);
+        }
+    }
+
     private void FixedUpdate()
     {
         MainCycle();
@@ -47,6 +55,20 @@ public class ArcadePlayerController : MonoBehaviour
     {
         Vector2 joystickInput = new Vector2(_joystick.Horizontal, _joystick.Vertical);
 
+        float powerPercentage = 1;
+
+        if (_joystick.Vertical > 0 && _joystick.Horizontal > 0)
+            powerPercentage = Mathf.Max(_joystick.Vertical, _joystick.Horizontal);
+
+        if (_joystick.Vertical > 0 && _joystick.Horizontal < 0)
+            powerPercentage = Mathf.Max(_joystick.Vertical, -_joystick.Horizontal);
+
+        if (_joystick.Vertical < 0 && _joystick.Horizontal > 0)
+            powerPercentage = Mathf.Max(-_joystick.Vertical, _joystick.Horizontal);
+
+        if (_joystick.Vertical < 0 && _joystick.Horizontal < 0)
+            powerPercentage = Mathf.Max(-_joystick.Vertical, -_joystick.Horizontal);
+
         if (_joystick.Vertical > _joystick.DeadZone 
             || _joystick.Vertical < -_joystick.DeadZone
             || _joystick.Horizontal > _joystick.DeadZone
@@ -55,7 +77,7 @@ public class ArcadePlayerController : MonoBehaviour
             foreach (var engine in _rotatingEngines) 
             {
                 engine.RotateEngine(joystickInput);
-                engine.StartEngine();
+                OnEngine(engine, powerPercentage);
             }
         }
 
