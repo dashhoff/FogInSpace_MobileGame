@@ -73,7 +73,7 @@ public class Engine : MonoBehaviour
     public void RotateEngine(Vector2 targetDirection)
     {
         // ¬ычисление угла между текущим направлением и целевым
-        float targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+        float targetAngle = Mathf.Atan2(-targetDirection.y, -targetDirection.x) * Mathf.Rad2Deg;
 
         // ѕлавное вращение двигател€
         float newAngle = Mathf.MoveTowardsAngle(
