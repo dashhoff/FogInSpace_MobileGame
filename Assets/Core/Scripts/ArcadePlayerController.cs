@@ -10,21 +10,15 @@ public class ArcadePlayerController : MonoBehaviour
     [SerializeField] private Engine[] _staticEngines;
     [SerializeField] private Engine[] _rotatingEngines;
 
-    [SerializeField] private Engine[] _mainEngines;
-    [SerializeField] private Engine[] _leftEngines;
-    [SerializeField] private Engine[] _rightEngines;
-    [SerializeField] private Engine[] _backEngines;
-
-    [Space(20f)]
-    [SerializeField] private Rigidbody _rb;
-
     [Space(20f)]
     [SerializeField] private float _power;
     [SerializeField] private float _powerPercentage;
 
     [Space(20f)]
+    [SerializeField] private Rigidbody _rb;
+
+    [Space(20f)]
     [SerializeField] private Joystick _joystick;
-    [SerializeField] private bool _keyboardActive;
 
     private void Awake()
     {
@@ -51,65 +45,25 @@ public class ArcadePlayerController : MonoBehaviour
 
     private void PlayerInput()
     {
-        if (_keyboardActive)
-        {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                foreach (Engine engine in _engines)
-                {
-                    engine.StartForsage();
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.LeftShift))
-            {
-                foreach (Engine engine in _engines)
-                {
-                    engine.StopForsage();
-                }
-            }
+        Vector2 joystickInput = new Vector2(_joystick.Horizontal, _joystick.Vertical);
 
-            if (Input.GetKeyDown(KeyCode.W))
+        if (_joystick.Vertical > _joystick.DeadZone 
+            || _joystick.Vertical < -_joystick.DeadZone
+            || _joystick.Horizontal > _joystick.DeadZone
+            || _joystick.Horizontal < -_joystick.DeadZone)
+        {
+            foreach (var engine in _rotatingEngines) 
             {
-                foreach (Engine engine in _mainEngines)
-                {
-                    OnEngine(engine, 1);
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.W))
-            {
-                foreach (Engine engine in _mainEngines)
-                {
-                    OnEngine(engine, 1);
-                }
+                engine.RotateEngine(joystickInput);
+                engine.StartEngine();
             }
         }
 
-        if (!_keyboardActive)
+        if (_joystick.Horizontal == 0 && _joystick.Vertical == 0)
         {
-            if (_joystick.Vertical > _joystick.DeadZone)
+            foreach (Engine engine in _engines)
             {
-                GoUp();
-            }
-            if (_joystick.Vertical < -_joystick.DeadZone)
-            {
-                GoDown();
-            }
-
-            if (_joystick.Horizontal > _joystick.DeadZone)
-            {
-                GoRight();
-            }
-            if (_joystick.Horizontal < -_joystick.DeadZone)
-            {
-                GoLeft();
-            }
-
-            if (_joystick.Horizontal == 0 && _joystick.Vertical == 0)
-            {
-                foreach (Engine engine in _engines)
-                {
-                    OffEngine(engine);
-                }
+                OffEngine(engine);
             }
         }
     }
@@ -124,57 +78,5 @@ public class ArcadePlayerController : MonoBehaviour
     {
         engine.SetPowerPercentage(0);
         engine.StopEngine();
-    }
-
-    public void GoLeft()
-    {
-        foreach (Engine engine in _leftEngines)
-        {
-            OffEngine(engine);
-        }
-
-        foreach (Engine engine in _rightEngines)
-        {
-            OnEngine(engine, -_joystick.Horizontal);
-        }
-    }
-
-    public void GoRight()
-    {
-        foreach (Engine engine in _rightEngines)
-        {
-            OffEngine(engine);
-        }
-
-        foreach (Engine engine in _leftEngines)
-        {
-            OnEngine(engine, _joystick.Horizontal);
-        }
-    }
-
-    public void GoUp()
-    {
-        foreach (Engine engine in _backEngines)
-        {
-            OffEngine(engine);
-        }
-
-        foreach (Engine engine in _mainEngines)
-        {
-            OnEngine(engine, _joystick.Vertical);
-        }
-    }
-
-    public void GoDown()
-    {
-        foreach (Engine engine in _mainEngines)
-        {
-            OffEngine(engine);
-        }
-
-        foreach (Engine engine in _backEngines)
-        {
-            OnEngine(engine, -_joystick.Vertical);
-        }
     }
 }
