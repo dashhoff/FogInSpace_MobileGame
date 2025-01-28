@@ -55,6 +55,16 @@ public class Engine : MonoBehaviour
         EngineCycle();
     }
 
+    private void Update()
+    {
+        Debug.DrawRay(_model.transform.position, -_model.transform.right * 10f, Color.green);
+    }
+
+    public void SetPower(float value)
+    {
+        _power = value;
+    }
+
     public void SetPowerPercentage(float value)
     {
         _powerPercentage = value;
@@ -134,20 +144,20 @@ public class Engine : MonoBehaviour
         {
             OverheatidEngine();
 
-            Vector2 forceDirection = transform.forward;
+            Vector2 forceDirection = -_model.transform.right;
 
             if (_forsageMode)
             {
                 float finalPower = _power * _forcemultiplier * _powerPercentage;
 
-                _shipRb.AddForceAtPosition(forceDirection * finalPower, transform.position, ForceMode.Force);
+                _shipRb.AddForceAtPosition(forceDirection * finalPower, _model.transform.position, ForceMode.Force);
                 SelfDamageEngine();
             }
             else
             {
                 float finalPower = _power * _powerPercentage;
 
-                _shipRb.AddForceAtPosition(forceDirection * finalPower, transform.position, ForceMode.Force);
+                _shipRb.AddForceAtPosition(forceDirection * finalPower, _model.transform.position, ForceMode.Force);
                 RepaireEngine();
             }
 
