@@ -13,4 +13,9 @@ public class Saves : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
+    public void SetLevel(int newValue)
+    {
+        Level = newValue;
+    }
 }
