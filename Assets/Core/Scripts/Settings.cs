@@ -4,12 +4,12 @@ public class Settings : MonoBehaviour
 {
     public static Settings Instance;
 
-    public static string Language = "ru";
+    public string Language = "ru";
 
-    public static bool PostProcessingEnabled = true;
+    public bool PostProcessingEnabled = true;
 
-    public static float SoundsVolume = 1;
-    public static float MusicVolume = 1;
+    public float SoundsVolume = 1;
+    public float MusicVolume = 1;
 
     private void Awake()
     {
@@ -17,5 +17,15 @@ public class Settings : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    public void SetSoundsVolume(float newValue)
+    {
+        SoundsVolume = newValue;
+    }
+
+    public void SetMusicVolume(float newValue)
+    {
+        MusicVolume = newValue;
     }
 }
