@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - FinishZone
+  - Meteorite
   layers:
   - Default
   - TransparentFX

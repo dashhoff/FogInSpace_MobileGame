@@ -66,6 +66,7 @@
     <Compile Include="Assets\Core\Scripts\UI\UIEngineEndurance.cs" />
     <Compile Include="Assets\Core\Scripts\DOTweenAnim\DOPulse.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Core\Scripts\Meteorite.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Core\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Core\Scripts\UI\UIPanel.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Core\Scripts\DynamicResolution.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Core\Scripts\MeteoriteSpawn.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
