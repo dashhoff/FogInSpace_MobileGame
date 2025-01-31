@@ -15,7 +15,7 @@ public class Engine : MonoBehaviour
     [Header("Settings")]
     [Space(10f)]
     [SerializeField] private bool _forsageMode = false;
-    [SerializeField] private float _forcemultiplier = 2f;
+    [SerializeField] private float _forceMultiplier = 2f;
     [Space(20f)]
     [SerializeField] private float _power = 50f;
     [SerializeField] private float _powerPercentage = 100;
@@ -103,6 +103,11 @@ public class Engine : MonoBehaviour
         _forsageMode = false;
     }
 
+    public void SetForsageMultiplier(float value)
+    {
+        _forceMultiplier = value;
+    }
+
     private void EngineCycle()
     {
         if (_hp <= 0)
@@ -148,7 +153,7 @@ public class Engine : MonoBehaviour
 
             if (_forsageMode)
             {
-                float finalPower = _power * _forcemultiplier * _powerPercentage;
+                float finalPower = _power * _forceMultiplier * _powerPercentage;
 
                 _shipRb.AddForceAtPosition(forceDirection * finalPower, _model.transform.position, ForceMode.Force);
                 SelfDamageEngine();
@@ -178,7 +183,7 @@ public class Engine : MonoBehaviour
     private void OverheatidEngine()
     {
         if (_forsageMode)
-            _endurance -= _overheatingSpeed * _forcemultiplier;
+            _endurance -= _overheatingSpeed * _forceMultiplier;
         else
             _endurance -= _overheatingSpeed;
     }
@@ -229,7 +234,7 @@ public class Engine : MonoBehaviour
         Vector2 newLifeTime = new Vector2(_minLifeTimeVFX, _maxLifeTimeVFX * _powerPercentage);
 
         if (_forsageMode)
-            newLifeTime = new Vector2(_minLifeTimeVFX, newLifeTime.y * _forcemultiplier);
+            newLifeTime = new Vector2(_minLifeTimeVFX, newLifeTime.y * _forceMultiplier);
 
         _engineEffect.SetVector2("LifeTime", newLifeTime);
     }
@@ -239,7 +244,7 @@ public class Engine : MonoBehaviour
         Vector2 newSpeed = new Vector2(_minSpeedVFX * _powerPercentage, _maxSpeedVFX * _powerPercentage);
 
         if (_forsageMode)
-            newSpeed = new Vector2(newSpeed.x * _forcemultiplier, newSpeed.y * _forcemultiplier);
+            newSpeed = new Vector2(newSpeed.x * _forceMultiplier, newSpeed.y * _forceMultiplier);
 
         _engineEffect.SetVector2("Speed", newSpeed);
     }

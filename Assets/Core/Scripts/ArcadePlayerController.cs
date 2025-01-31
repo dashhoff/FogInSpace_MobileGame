@@ -14,6 +14,9 @@ public class ArcadePlayerController : MonoBehaviour
     [SerializeField] private float _power;
     [SerializeField] private float _powerPercentage;
 
+    [SerializeField] private bool _forsageMode;
+    [SerializeField] private float _forsageMultiplier;
+
     [Space(20f)]
     [SerializeField] private Rigidbody _rb;
 
@@ -33,6 +36,7 @@ public class ArcadePlayerController : MonoBehaviour
         foreach (Engine engine in _engines)
         {
             engine.SetPower(_power);
+            engine.SetForsageMultiplier(_forsageMultiplier);
         }
     }
 
@@ -93,12 +97,27 @@ public class ArcadePlayerController : MonoBehaviour
     public void OnEngine(Engine engine, float powerPercentage)
     {
         engine.SetPowerPercentage(powerPercentage);
+        if (_forsageMode)
+            engine.StartForsage();
+        else
+            engine.StopForsage();
         engine.StartEngine();
     }
 
     public void OffEngine(Engine engine)
     {
         engine.SetPowerPercentage(0);
+
         engine.StopEngine();
+    }
+
+    public void EnableForsage()
+    {
+        _forsageMode = true;
+    }
+
+    public void DisableForsage()
+    {
+        _forsageMode = false;
     }
 }
