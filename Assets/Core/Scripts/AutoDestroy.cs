@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AutoDestroy : MonoBehaviour
@@ -6,11 +7,13 @@ public class AutoDestroy : MonoBehaviour
 
     private void Start()
     {
-        Invoke("Destroy", _delay);
+        StartCoroutine(Destroy());
     }
 
-    private void Destroy()
+    private IEnumerator Destroy()
     {
+        yield return new WaitForSecondsRealtime(_delay);
+
         Destroy(gameObject);
     }
 }

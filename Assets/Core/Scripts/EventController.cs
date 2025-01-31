@@ -1,16 +1,28 @@
+using System;
 using UnityEngine;
 
 public class EventController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static EventController Instance;
+
+    public static event Action ShipDamaget;
+
+    public static event Action Victory;
+
+    public static event Action Defeat;
+
+    private void Awake()
     {
-        
+        if(Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GetDamage()
     {
-        
+        ShipDamaget.Invoke();
     }
+
+
 }
