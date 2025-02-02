@@ -4,7 +4,7 @@ public class Saves : MonoBehaviour
 {
     public static Saves Instance;
 
-    public static int Level;
+    public static int Level = 1;
 
     private void Awake()
     {

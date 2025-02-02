@@ -9,7 +9,12 @@ public class Meteorite : MonoBehaviour
 
     public void Init()
     {
-        _rb.AddForce(_randomDirection);
-        _rb.AddTorque(_randomTorque);
+        _rb.AddForce(_randomDirection, ForceMode.Impulse);
+
+        _rb.AddTorque(_randomTorque, ForceMode.Impulse);
     }
+
+    public void SetDirection(Vector3 newValue) => _randomDirection = newValue;
+
+    public void SetTorque(Vector3 newValue) => _randomTorque = newValue;
 }

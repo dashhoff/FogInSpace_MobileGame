@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6120818145458436454}
   - component: {fileID: 8033331990513222405}
   - component: {fileID: 5842675698909127614}
-  - component: {fileID: 647943591665804097}
   - component: {fileID: 7595913361777708597}
+  - component: {fileID: 647943591665804097}
   - component: {fileID: 792221013000660283}
   m_Layer: 0
   m_Name: Meteorite
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616299693947765615}
-  m_Mesh: {fileID: 3010946912365197963, guid: b06900fbed9f1484a84727027b524573, type: 3}
+  m_Mesh: {fileID: 4763978081491003107, guid: 3a58cd80a0197744ea914b3bb020771c, type: 3}
 --- !u!23 &8033331990513222405
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32dd3ba2ee7b3fb4c8d7b3158f4cd7c5, type: 2}
+  - {fileID: 2100000, guid: 40511e2ae39f9ab42a466856b09bc6da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,6 +105,21 @@ MonoBehaviour:
   _randomDirection: {x: -2, y: 2, z: 0}
   _randomTorque: {x: -2, y: 2, z: 0}
   _rb: {fileID: 647943591665804097}
+--- !u!114 &7595913361777708597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616299693947765615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1dbfd39d37707b49897d8cd059c4911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delay: 20
+  _shrink: 1
+  _shrinkDuration: 0.5
 --- !u!54 &647943591665804097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,7 +128,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616299693947765615}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 25
   m_Drag: 0
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -132,19 +147,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
---- !u!114 &7595913361777708597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616299693947765615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1dbfd39d37707b49897d8cd059c4911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _delay: 20
 --- !u!64 &792221013000660283
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -166,4 +168,4 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 3010946912365197963, guid: b06900fbed9f1484a84727027b524573, type: 3}
+  m_Mesh: {fileID: 4763978081491003107, guid: 3a58cd80a0197744ea914b3bb020771c, type: 3}
