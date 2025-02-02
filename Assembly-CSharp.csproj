@@ -82,6 +82,7 @@
     <Compile Include="Assets\Core\Scripts\AutoDestroy.cs" />
     <Compile Include="Assets\Core\Scripts\DOTweenAnim\DOShake.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Core\Scripts\CameraShake.cs" />
     <Compile Include="Assets\Core\Scripts\TargetFollow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Core\Scripts\Scenes\GameController_Level2.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
+    <Compile Include="Assets\Core\Scripts\UI\ScreenBtwScenes.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Core\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Core\Scripts\PlayerController.cs" />

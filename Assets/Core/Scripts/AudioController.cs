@@ -1,10 +1,15 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioController : MonoBehaviour
 {
     public static AudioController Instance;
+
+    [SerializeField] private GameObject _soundPrefab;
 
     [SerializeField] private AudioSource[] _allSoundsArray;
     [SerializeField] private AudioSource[] _allMusicArray;
@@ -23,6 +28,10 @@ public class AudioController : MonoBehaviour
 
     [SerializeField] private AudioSource _backMusic;
 
+    [SerializeField] private AudioMixer _soundMixer;
+    [SerializeField] private AudioMixer _musicMixer;
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,9 +40,34 @@ public class AudioController : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void OnEnable()
+    {
+        EventController.ShipDamaget += MetalSound;
+    }
+
+    private void OnDisable()
+    {
+        EventController.ShipDamaget -= MetalSound;
+
+    }
+
     public void Init()
     {
-        
+        for (int i = 0; i < _allSounds.Count; i++)
+        {
+            _allSounds.Add(_allSoundsArray[i].name, _allSoundsArray[i]);
+        }
+    }
+
+    public void MetalSound()
+    {
+        GameObject sound = Instantiate(_soundPrefab);
+
+        AudioSource soundAudioSource = _soundPrefab.GetComponent<AudioSource>();
+
+        soundAudioSource.clip = _hitSound.clip;
+
+        soundAudioSource.Play();
     }
 
     public void PLay(string name, float newVolume)
@@ -59,17 +93,23 @@ public class AudioController : MonoBehaviour
 
     public void SetAllSoundsVolume()
     {
-        foreach (AudioSource sound in _allSoundsArray)
+        float volume = Mathf.Log10(Settings.Instance.SoundsVolume) * 20;
+        _soundMixer.SetFloat("SoundVolume", volume);
+
+        /*foreach (AudioSource sound in _allSoundsArray)
         {
             sound.volume *= Settings.Instance.SoundsVolume;
-        }
+        }*/
     }
     public void SetAllMusicVolume()
     {
-        foreach (AudioSource music in _allMusicArray)
+        float volume = Mathf.Log10(Settings.Instance.SoundsVolume) * 20;
+        _musicMixer.SetFloat("MusicVolume", volume);
+
+        /*foreach (AudioSource music in _allMusicArray)
         {
             music.volume *= Settings.Instance.MusicVolume;
-        }
+        }*/
     }
 
     public void SetPitch(string name, float newPitch)

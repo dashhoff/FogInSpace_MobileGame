@@ -92,6 +92,8 @@ public class ArcadePlayerController : MonoBehaviour
                 OffEngine(engine);
             }
         }
+
+        EditSound();
     }
 
     public void OnEngine(Engine engine, float powerPercentage)
@@ -109,6 +111,12 @@ public class ArcadePlayerController : MonoBehaviour
         engine.SetPowerPercentage(0);
 
         engine.StopEngine();
+    }
+
+    public void EditSound()
+    {
+        //AudioController.Instance.SetVolume("engine", _powerPercentage);
+        //AudioController.Instance.SetVolume("turbine", _powerPercentage);
     }
 
     public void EnableForsage()

@@ -6,8 +6,8 @@ public class Settings : MonoBehaviour
 
     public string Language = "ru";
 
-    public int TargetFPS;
-    public int Quality;
+    public int TargetFPS = 60;
+    public int Quality = 1;
 
     public bool PostProcessingEnabled = true;
 
