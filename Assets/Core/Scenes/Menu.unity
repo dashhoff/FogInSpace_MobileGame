@@ -9240,6 +9240,9 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
+    - m_Text: 30 FPS
+      m_Image: {fileID: 0}
+      m_Color: {r: 1, g: 1, b: 1, a: 1}
     - m_Text: 60 FPS
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9254,7 +9257,19 @@ MonoBehaviour:
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1669330954}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: SetTargetFPS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0
 --- !u!114 &1112038623
 MonoBehaviour:
@@ -11517,7 +11532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60 FPS
+  m_text: 30 FPS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a93a283d7596fed4bb1075681f8e9277, type: 2}
   m_sharedMaterial: {fileID: 6792077685615313079, guid: a93a283d7596fed4bb1075681f8e9277, type: 2}
@@ -11680,6 +11695,7 @@ MonoBehaviour:
   PostProcessingEnabled: 1
   SoundsVolume: 1
   MusicVolume: 1
+  _fpsDropdown: {fileID: 1112038622}
 --- !u!4 &1669330955
 Transform:
   m_ObjectHideFlags: 0

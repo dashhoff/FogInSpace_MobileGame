@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Settings : MonoBehaviour
@@ -13,6 +14,10 @@ public class Settings : MonoBehaviour
 
     public float SoundsVolume = 1;
     public float MusicVolume = 1;
+
+    [Header("UI")]
+    [Space(20f)]
+    [SerializeField] private TMP_Dropdown _fpsDropdown;
 
     private void Awake()
     {
@@ -64,9 +69,30 @@ public class Settings : MonoBehaviour
         MusicVolume = newValue;
     }
 
-    public void SetTargetFPS(int newValue)
+    public void SetTargetFPS()
     {
-        TargetFPS = newValue;
+        switch (_fpsDropdown.value)
+        {
+            case 0:
+                TargetFPS = 30;
+                break;
+            case 1:
+                TargetFPS = 60;
+                break;
+            case 2:
+                TargetFPS = 75;
+                break;
+            case 3:
+                TargetFPS = 90;
+                break;
+            case 4:
+                TargetFPS = 100;
+                break;
+        }
+
+        Application.targetFrameRate = TargetFPS;
+
+        Save();
     }
 
     public void SetQuality(int newValue)
