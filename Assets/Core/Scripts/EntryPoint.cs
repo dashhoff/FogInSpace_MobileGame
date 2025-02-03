@@ -3,10 +3,15 @@ using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
 {
+    [SerializeField] private Settings Settings;
+
+    [SerializeField] private SettingsMenu SettingsMenu;
 
     private IEnumerator Start()
     {
-        Application.targetFrameRate = Settings.Instance.TargetFPS;
+        Settings.Init();
+
+        SettingsMenu.Init();
 
         yield return null;
     }

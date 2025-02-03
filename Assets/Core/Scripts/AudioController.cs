@@ -1,7 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -22,7 +19,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioSource _radiationSound;
     [SerializeField] private AudioSource _noiseSound;
 
-    [SerializeField] private AudioSource _hitSound;
+    [SerializeField] private AudioSource _metalSound;
 
     [SerializeField] private AudioSource _uiSound;
 
@@ -30,7 +27,6 @@ public class AudioController : MonoBehaviour
 
     [SerializeField] private AudioMixer _soundMixer;
     [SerializeField] private AudioMixer _musicMixer;
-
 
     private void Awake()
     {
@@ -48,7 +44,6 @@ public class AudioController : MonoBehaviour
     private void OnDisable()
     {
         EventController.ShipDamaget -= MetalSound;
-
     }
 
     public void Init()
@@ -65,7 +60,7 @@ public class AudioController : MonoBehaviour
 
         AudioSource soundAudioSource = _soundPrefab.GetComponent<AudioSource>();
 
-        soundAudioSource.clip = _hitSound.clip;
+        soundAudioSource.clip = _metalSound.clip;
 
         soundAudioSource.Play();
     }
@@ -101,6 +96,7 @@ public class AudioController : MonoBehaviour
             sound.volume *= Settings.Instance.SoundsVolume;
         }*/
     }
+
     public void SetAllMusicVolume()
     {
         float volume = Mathf.Log10(Settings.Instance.SoundsVolume) * 20;
