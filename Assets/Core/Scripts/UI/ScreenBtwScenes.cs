@@ -20,7 +20,6 @@ public class ScreenBtwScenes : MonoBehaviour
 
         DOTween.Sequence()
             .SetUpdate(true)
-            .AppendInterval(0.2f)
             .Append(_fadePanel.DOFade(1f, _fadeTime))
             .OnComplete(() => SceneLoader.Instance.LoadLevelId());
     }
