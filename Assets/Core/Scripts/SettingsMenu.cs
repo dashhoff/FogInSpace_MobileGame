@@ -51,7 +51,7 @@ public class SettingsMenu : MonoBehaviour
                 Settings.Instance.TargetFPS = 90;
                 break;
             case 4:
-                Settings.Instance.TargetFPS = 100;
+                Settings.Instance.TargetFPS = 120;
                 break;
         }
 
@@ -64,19 +64,19 @@ public class SettingsMenu : MonoBehaviour
     {
         switch (Settings.Instance.TargetFPS)
         {
-            case 0:
+            case 30:
                 _fpsDropdown.value = 0;
                 break;
-            case 1:
+            case 60:
                 _fpsDropdown.value = 1;
                 break;
-            case 2:
+            case 75:
                 _fpsDropdown.value = 2;
                 break;
-            case 3:
+            case 90:
                 _fpsDropdown.value = 3;
                 break;
-            case 4:
+            case 120:
                 _fpsDropdown.value = 4;
                 break;
         }
