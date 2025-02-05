@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 369b9ebe3a62b904dbc19bd332b44086, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9e07b5f1ebeb2764ea80a163086f4ba7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -20280,11 +20280,11 @@ MonoBehaviour:
   _turbineSource: {fileID: 786880325}
   _radiationSound: {fileID: 943990837}
   _noiseSound: {fileID: 82500569}
-  _hitSound: {fileID: 4186666853047392253}
+  _metalSound: {fileID: 4186666853047392253}
   _uiSound: {fileID: 733407091}
   _backMusic: {fileID: 1575117004}
-  _soundMixer: {fileID: 0}
-  _musicMixer: {fileID: 0}
+  _soundMixer: {fileID: 24100000, guid: 15dd5acdd76f07b46a2fcdeddc393754, type: 2}
+  _musicMixer: {fileID: 24100000, guid: 42450978ca134bd42b9033788f1c01b9, type: 2}
 --- !u!4 &603799636
 Transform:
   m_ObjectHideFlags: 0
@@ -73136,7 +73136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2043719680
 Transform:
   m_ObjectHideFlags: 0
