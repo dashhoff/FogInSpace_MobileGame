@@ -1,8 +1,12 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.VFX;
 
 public class Engine : MonoBehaviour
 {
+    [Space(10f)]
+    [SerializeField] private bool _arcade = false;
+
     [Space(10f)]
     [SerializeField] private bool _isActive = false;
 
@@ -155,14 +159,22 @@ public class Engine : MonoBehaviour
             {
                 float finalPower = _power * _forceMultiplier * _powerPercentage;
 
-                _shipRb.AddForceAtPosition(forceDirection * finalPower, _model.transform.position, ForceMode.Force);
+                if (_arcade)
+                    _shipRb.AddForce(forceDirection * finalPower, ForceMode.Force);
+                else
+                    _shipRb.AddForceAtPosition(forceDirection * finalPower, _model.transform.position, ForceMode.Force);
+                
                 SelfDamageEngine();
             }
             else
             {
                 float finalPower = _power * _powerPercentage;
 
-                _shipRb.AddForceAtPosition(forceDirection * finalPower, _model.transform.position, ForceMode.Force);
+                if (_arcade)
+                    _shipRb.AddForce(forceDirection * finalPower, ForceMode.Force);
+                else
+                    _shipRb.AddForceAtPosition(forceDirection * finalPower, _model.transform.position, ForceMode.Force);
+                
                 RepaireEngine();
             }
 

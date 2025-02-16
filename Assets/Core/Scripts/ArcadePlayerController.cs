@@ -99,10 +99,12 @@ public class ArcadePlayerController : MonoBehaviour
     public void OnEngine(Engine engine, float powerPercentage)
     {
         engine.SetPowerPercentage(powerPercentage);
+
         if (_forsageMode)
             engine.StartForsage();
         else
             engine.StopForsage();
+
         engine.StartEngine();
     }
 
