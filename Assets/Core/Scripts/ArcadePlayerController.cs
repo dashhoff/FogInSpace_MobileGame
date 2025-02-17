@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ArcadePlayerController : MonoBehaviour
 {
@@ -21,7 +22,18 @@ public class ArcadePlayerController : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
 
     [Space(20f)]
-    [SerializeField] private Joystick _joystick;
+    [SerializeField] private Joystick _moveJoystick;
+
+    [Space(20f)]
+    [Header("Rotating")]
+    [SerializeField] private bool _leftRotating;
+    [SerializeField] private bool _rightRotating;
+
+    [SerializeField] private float _rotatingPower;
+
+    [Space(20f)]
+    [SerializeField] private VisualEffect[] _onLeftRotateEngines;
+    [SerializeField] private VisualEffect[] _onRightRotateEngines;
 
     private void Awake()
     {
@@ -42,7 +54,7 @@ public class ArcadePlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MainCycle();
+        RotateShip();
     }
 
     private void Update()
@@ -50,33 +62,28 @@ public class ArcadePlayerController : MonoBehaviour
         PlayerInput();
     }
 
-    private void MainCycle()
-    {
-
-    }
-
     private void PlayerInput()
     {
-        Vector2 joystickInput = new Vector2(_joystick.Horizontal, _joystick.Vertical);
+        Vector2 joystickInput = new Vector2(_moveJoystick.Horizontal, _moveJoystick.Vertical);
 
         float powerPercentage = 1;
 
-        if (_joystick.Vertical > 0 && _joystick.Horizontal > 0)
-            powerPercentage = Mathf.Max(_joystick.Vertical, _joystick.Horizontal);
+        if (_moveJoystick.Vertical > 0 && _moveJoystick.Horizontal > 0)
+            powerPercentage = Mathf.Max(_moveJoystick.Vertical, _moveJoystick.Horizontal);
 
-        if (_joystick.Vertical > 0 && _joystick.Horizontal < 0)
-            powerPercentage = Mathf.Max(_joystick.Vertical, -_joystick.Horizontal);
+        if (_moveJoystick.Vertical > 0 && _moveJoystick.Horizontal < 0)
+            powerPercentage = Mathf.Max(_moveJoystick.Vertical, -_moveJoystick.Horizontal);
 
-        if (_joystick.Vertical < 0 && _joystick.Horizontal > 0)
-            powerPercentage = Mathf.Max(-_joystick.Vertical, _joystick.Horizontal);
+        if (_moveJoystick.Vertical < 0 && _moveJoystick.Horizontal > 0)
+            powerPercentage = Mathf.Max(-_moveJoystick.Vertical, _moveJoystick.Horizontal);
 
-        if (_joystick.Vertical < 0 && _joystick.Horizontal < 0)
-            powerPercentage = Mathf.Max(-_joystick.Vertical, -_joystick.Horizontal);
+        if (_moveJoystick.Vertical < 0 && _moveJoystick.Horizontal < 0)
+            powerPercentage = Mathf.Max(-_moveJoystick.Vertical, -_moveJoystick.Horizontal);
 
-        if (_joystick.Vertical > _joystick.DeadZone 
-            || _joystick.Vertical < -_joystick.DeadZone
-            || _joystick.Horizontal > _joystick.DeadZone
-            || _joystick.Horizontal < -_joystick.DeadZone)
+        if (_moveJoystick.Vertical > _moveJoystick.DeadZone 
+            || _moveJoystick.Vertical < -_moveJoystick.DeadZone
+            || _moveJoystick.Horizontal > _moveJoystick.DeadZone
+            || _moveJoystick.Horizontal < -_moveJoystick.DeadZone)
         {
             foreach (var engine in _rotatingEngines) 
             {
@@ -85,7 +92,7 @@ public class ArcadePlayerController : MonoBehaviour
             }
         }
 
-        if (_joystick.Horizontal == 0 && _joystick.Vertical == 0)
+        if (_moveJoystick.Horizontal == 0 && _moveJoystick.Vertical == 0)
         {
             foreach (Engine engine in _engines)
             {
@@ -94,6 +101,51 @@ public class ArcadePlayerController : MonoBehaviour
         }
 
         EditSound();
+    }
+
+    public void OnLeftRotate()
+    {
+        _rightRotating = false;
+        _leftRotating = true;
+    }
+
+    public void OffLeftRotate()
+    {
+        _leftRotating = false;
+    }
+
+    public void OnRightRotate()
+    {
+        _leftRotating = false;
+        _rightRotating = true;
+    }
+
+    public void OffRightRotate()
+    {
+        _rightRotating = false;
+    }
+
+    private void RotateShip()
+    {
+        if (_leftRotating && _rightRotating) return;
+
+        if (_leftRotating)
+        {
+            _rb.transform.Rotate(Vector3.right * -_rotatingPower * Time.deltaTime);
+            //_rb.AddTorque(transform.up * -_rotatingPower, ForceMode.Acceleration);
+
+            foreach (var engine in _onRightRotateEngines) engine.Stop();
+            foreach (var engine in _onLeftRotateEngines) engine.Play();
+        }
+
+        if (_rightRotating)
+        {
+            _rb.transform.Rotate(Vector3.right * _rotatingPower * Time.deltaTime);
+            //_rb.AddTorque(transform.forward * _rotatingPower, ForceMode.Acceleration);
+
+            foreach (var engine in _onLeftRotateEngines) engine.Stop();
+            foreach (var engine in _onRightRotateEngines) engine.Play();
+        }
     }
 
     public void OnEngine(Engine engine, float powerPercentage)
