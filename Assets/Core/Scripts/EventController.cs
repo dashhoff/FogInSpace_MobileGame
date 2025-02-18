@@ -21,6 +21,8 @@ public class EventController : MonoBehaviour
 
     public void GetDamage()
     {
+        Debug.Log("Ship Damaget!");
+
         ShipDamaget?.Invoke();
     }
 }

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8033331990513222405}
   - component: {fileID: 5842675698909127614}
   - component: {fileID: 7595913361777708597}
-  - component: {fileID: 647943591665804097}
   m_Layer: 0
   m_Name: MeteoriteBack
   m_TagString: Untagged
@@ -96,14 +95,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616299693947765615}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 121af74927532ba40a0a72a44c577199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _randomDirection: {x: -2, y: 2, z: 0}
   _randomTorque: {x: -2, y: 2, z: 0}
-  _rb: {fileID: 647943591665804097}
+  _rb: {fileID: 0}
 --- !u!114 &7595913361777708597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +110,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8616299693947765615}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1dbfd39d37707b49897d8cd059c4911, type: 3}
   m_Name: 
@@ -119,30 +118,3 @@ MonoBehaviour:
   _delay: 180
   _shrink: 1
   _shrinkDuration: 1
---- !u!54 &647943591665804097
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616299693947765615}
-  serializedVersion: 4
-  m_Mass: 100
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 8
-  m_CollisionDetection: 0
