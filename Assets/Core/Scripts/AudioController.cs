@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -6,7 +7,7 @@ public class AudioController : MonoBehaviour
 {
     public static AudioController Instance;
 
-    [SerializeField] private GameObject _soundPrefab;
+    [SerializeField] private SoundPrefab _soundPrefab;
 
     [SerializeField] private AudioSource[] _allSoundsArray;
     [SerializeField] private AudioSource[] _allMusicArray;
@@ -34,6 +35,8 @@ public class AudioController : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        _allSounds = new Dictionary<string, AudioSource>();
     }
 
     private void OnEnable()
@@ -46,9 +49,9 @@ public class AudioController : MonoBehaviour
         EventController.ShipDamaget -= MetalSound;
     }
 
-    public void Init()
+    public void Start()
     {
-        for (int i = 0; i < _allSounds.Count; i++)
+        for (int i = 0; i < _allSoundsArray.Length; i++)
         {
             _allSounds.Add(_allSoundsArray[i].name, _allSoundsArray[i]);
         }
@@ -56,13 +59,16 @@ public class AudioController : MonoBehaviour
 
     public void MetalSound()
     {
-        GameObject sound = Instantiate(_soundPrefab);
+        SoundPrefab sound = Instantiate(_soundPrefab);
 
         AudioSource soundAudioSource = _soundPrefab.GetComponent<AudioSource>();
 
         soundAudioSource.clip = _metalSound.clip;
 
-        soundAudioSource.Play();
+        sound.SetPitch(new Vector2(0.6f, 1.2f));
+        sound.SetVolume(new Vector2(0.05f, 0.2f));
+
+        sound.Init();
     }
 
     public void PLay(string name, float newVolume)
@@ -83,7 +89,9 @@ public class AudioController : MonoBehaviour
     {
         AudioSource sound = _allSounds[name];
 
-        sound.volume = newVolume;
+        //sound.volume = newVolume;
+
+        sound.DOFade(newVolume, 2f);
     }
 
     public void SetAllSoundsVolume()

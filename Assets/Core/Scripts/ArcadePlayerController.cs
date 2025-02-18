@@ -5,26 +5,19 @@ public class ArcadePlayerController : MonoBehaviour
 {
     public static ArcadePlayerController Instance;
 
-    [Space(20f)]
+    [Header("Engines")]
     [SerializeField] private Engine[] _engines;
 
     [SerializeField] private Engine[] _staticEngines;
     [SerializeField] private Engine[] _rotatingEngines;
 
-    [Space(20f)]
+    [Header("Engine Settings")]
     [SerializeField] private float _power;
     [SerializeField] private float _powerPercentage;
 
     [SerializeField] private bool _forsageMode;
     [SerializeField] private float _forsageMultiplier;
 
-    [Space(20f)]
-    [SerializeField] private Rigidbody _rb;
-
-    [Space(20f)]
-    [SerializeField] private Joystick _moveJoystick;
-
-    [Space(20f)]
     [Header("Rotating")]
     [SerializeField] private bool _leftRotating;
     [SerializeField] private bool _rightRotating;
@@ -34,6 +27,10 @@ public class ArcadePlayerController : MonoBehaviour
     [Space(20f)]
     [SerializeField] private VisualEffect[] _onLeftRotateEngines;
     [SerializeField] private VisualEffect[] _onRightRotateEngines;
+
+    [Header("Other")]
+    [SerializeField] private Rigidbody _rb;
+    [SerializeField] private Joystick _moveJoystick;
 
     private void Awake()
     {
@@ -60,25 +57,27 @@ public class ArcadePlayerController : MonoBehaviour
     private void Update()
     {
         PlayerInput();
+
+        EditSoundsVolume();
     }
 
     private void PlayerInput()
     {
         Vector2 joystickInput = new Vector2(_moveJoystick.Horizontal, _moveJoystick.Vertical);
 
-        float powerPercentage = 1;
+        //float powerPercentage = 1;
 
         if (_moveJoystick.Vertical > 0 && _moveJoystick.Horizontal > 0)
-            powerPercentage = Mathf.Max(_moveJoystick.Vertical, _moveJoystick.Horizontal);
+            _powerPercentage = Mathf.Max(_moveJoystick.Vertical, _moveJoystick.Horizontal);
 
         if (_moveJoystick.Vertical > 0 && _moveJoystick.Horizontal < 0)
-            powerPercentage = Mathf.Max(_moveJoystick.Vertical, -_moveJoystick.Horizontal);
+            _powerPercentage = Mathf.Max(_moveJoystick.Vertical, -_moveJoystick.Horizontal);
 
         if (_moveJoystick.Vertical < 0 && _moveJoystick.Horizontal > 0)
-            powerPercentage = Mathf.Max(-_moveJoystick.Vertical, _moveJoystick.Horizontal);
+            _powerPercentage = Mathf.Max(-_moveJoystick.Vertical, _moveJoystick.Horizontal);
 
         if (_moveJoystick.Vertical < 0 && _moveJoystick.Horizontal < 0)
-            powerPercentage = Mathf.Max(-_moveJoystick.Vertical, -_moveJoystick.Horizontal);
+            _powerPercentage = Mathf.Max(-_moveJoystick.Vertical, -_moveJoystick.Horizontal);
 
         if (_moveJoystick.Vertical > _moveJoystick.DeadZone 
             || _moveJoystick.Vertical < -_moveJoystick.DeadZone
@@ -88,19 +87,19 @@ public class ArcadePlayerController : MonoBehaviour
             foreach (var engine in _rotatingEngines) 
             {
                 engine.RotateEngine(joystickInput);
-                OnEngine(engine, powerPercentage);
+                OnEngine(engine, _powerPercentage);
             }
         }
 
         if (_moveJoystick.Horizontal == 0 && _moveJoystick.Vertical == 0)
         {
+            _powerPercentage = 0;
+
             foreach (Engine engine in _engines)
             {
                 OffEngine(engine);
             }
         }
-
-        EditSound();
     }
 
     public void OnLeftRotate()
@@ -167,10 +166,10 @@ public class ArcadePlayerController : MonoBehaviour
         engine.StopEngine();
     }
 
-    public void EditSound()
+    public void EditSoundsVolume()
     {
-        //AudioController.Instance.SetVolume("engine", _powerPercentage);
-        //AudioController.Instance.SetVolume("turbine", _powerPercentage);
+        AudioController.Instance.SetVolume("EngineSound", _powerPercentage / 10);
+        AudioController.Instance.SetVolume("TurbineSound", _powerPercentage / 10);
     }
 
     public void EnableForsage()
