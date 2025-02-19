@@ -66,6 +66,7 @@
     <Compile Include="Assets\Core\Scripts\UI\UIEngineEndurance.cs" />
     <Compile Include="Assets\Core\Scripts\DOTweenAnim\DOPulse.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Core\Scripts\DOTweenAnim\DOFade.cs" />
     <Compile Include="Assets\Core\Scripts\Meteorite.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Core\Scripts\SceneLoader.cs" />
@@ -91,10 +92,12 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Core\Scripts\Level_1\UIController_Level_1.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Core\Scripts\UI\ScreenBtwScenes.cs" />
+    <Compile Include="Assets\Core\Scripts\DOTweenAnim\DOScale.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Core\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Core\Scripts\PlayerController.cs" />
@@ -131,6 +134,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Core\Scripts\DOTweenAnim\DORotate.cs" />
+    <Compile Include="Assets\Core\Scripts\UI\WorldMarker.cs" />
     <Compile Include="Assets\Core\Scripts\Saves.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\Core\Scripts\Level_1\Player_Level1.cs" />
