@@ -54,10 +54,19 @@ public class Player_Level1 : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("FinishZone")) 
+            EventController.Instance.Victoried();
+    }
+
     private IEnumerator RepairingCoroutine()
     {
         while (true)
         {
+            if (_hp <= 0)
+                EventController.Instance.Defeated();
+
             if (!_canRepairing)
             {
                 yield return new WaitForSecondsRealtime(_repairTime);

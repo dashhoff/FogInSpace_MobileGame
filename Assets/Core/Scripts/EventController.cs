@@ -25,4 +25,18 @@ public class EventController : MonoBehaviour
 
         ShipDamaget?.Invoke();
     }
+
+    public void Victoried()
+    {
+        Debug.Log("Victory!");
+
+        Victory?.Invoke();
+    }
+
+    public void Defeated()
+    {
+        Debug.Log("Defeat!");
+
+        Defeat?.Invoke();
+    }
 }
