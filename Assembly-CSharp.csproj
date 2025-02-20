@@ -75,6 +75,7 @@
     <Compile Include="Assets\Core\Scripts\UI\TextTranslator.cs" />
     <Compile Include="Assets\Core\Scripts\Scenes\GameController_Level1.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Core\Scripts\MeteoriteSpawnCircle.cs" />
     <Compile Include="Assets\Core\Scripts\ArcadePlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />

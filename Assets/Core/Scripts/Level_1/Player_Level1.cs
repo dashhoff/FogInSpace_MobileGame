@@ -39,9 +39,14 @@ public class Player_Level1 : MonoBehaviour
         StartCoroutine(RepairingCoroutine());
     }
 
-    public void GetDamage(float damage)
+    public void Damage(float damage)
     {
         _hp -= damage;
+    }
+
+    public float GetHP()
+    {
+        return _hp;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -50,7 +55,7 @@ public class Player_Level1 : MonoBehaviour
         {
             EventController.Instance.GetDamage();
 
-            GetDamage(1f);
+            Damage(1f);
         }
     }
 
@@ -73,7 +78,10 @@ public class Player_Level1 : MonoBehaviour
             }
 
             if (_hp < _maxHp)
+            {
                 _hp++;
+                UIController_Level_1.Instance.UpdateHPBar();
+            }
 
             if (_hp > _maxHp)
                 _hp = _maxHp;
