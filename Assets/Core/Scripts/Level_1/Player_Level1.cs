@@ -6,8 +6,8 @@ public class Player_Level1 : MonoBehaviour
     public static Player_Level1 Instance;
 
     [Header("Main Settings")]
-    [SerializeField] private bool _victoried;
-    [SerializeField] private bool _defeated;
+    public bool Victoried;
+    public bool Defeated;
 
     [Header("HP Settings")]
     [SerializeField] private bool _canRepairing = true;
@@ -61,8 +61,12 @@ public class Player_Level1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("FinishZone")) 
+        if (other.gameObject.CompareTag("FinishZone"))
+        {
+            Victoried = true;
+
             EventController.Instance.Victoried();
+        }
     }
 
     private IEnumerator RepairingCoroutine()
@@ -70,7 +74,11 @@ public class Player_Level1 : MonoBehaviour
         while (true)
         {
             if (_hp <= 0)
+            {
+                Defeated = true;
+
                 EventController.Instance.Defeated();
+            }
 
             if (!_canRepairing)
             {

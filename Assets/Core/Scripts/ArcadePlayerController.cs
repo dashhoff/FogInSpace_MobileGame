@@ -61,8 +61,22 @@ public class ArcadePlayerController : MonoBehaviour
         EditSoundsVolume();
     }
 
+    private void OnEnable()
+    {
+        EventController.Victory += OffAllEngine;
+        EventController.Defeat += OffAllEngine;
+    }
+
+    private void OnDisable()
+    {
+        EventController.Victory -= OffAllEngine;
+        EventController.Defeat -= OffAllEngine;
+    }
+
     private void PlayerInput()
     {
+        if (Player_Level1.Instance.Defeated || Player_Level1.Instance.Victoried) return;
+
         Vector2 joystickInput = new Vector2(_moveJoystick.Horizontal, _moveJoystick.Vertical);
 
         //float powerPercentage = 1;
@@ -164,6 +178,16 @@ public class ArcadePlayerController : MonoBehaviour
         engine.SetPowerPercentage(0);
 
         engine.StopEngine();
+    }
+
+    public void OffAllEngine()
+    {
+        _powerPercentage = 0;
+
+        foreach (Engine engine in _engines)
+        {
+            OffEngine(engine);
+        }
     }
 
     public void EditSoundsVolume()
