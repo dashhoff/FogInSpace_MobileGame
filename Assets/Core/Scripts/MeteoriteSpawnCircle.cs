@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeteoriteSpawnCircle : MonoBehaviour
 {
-    [SerializeField] private GameObject _prefab;
+    [SerializeField] private Meteorite _prefab;
     [SerializeField] private Transform _target;
 
     [SerializeField] private int _poolSize = 500;
@@ -12,18 +12,18 @@ public class MeteoriteSpawnCircle : MonoBehaviour
     [SerializeField] private float _spawnDistance = 5f;
     [SerializeField] private float _spawnWidth = 2f;
 
-    private Queue<GameObject> _pool;
+    private Queue<Meteorite> _pool;
     private int _currentIndex = 0;
 
     private void Start()
     {
         // Инициализируем пул объектов
-        _pool = new Queue<GameObject>();
+        _pool = new Queue<Meteorite>();
 
         for (int i = 0; i < _poolSize; i++)
         {
-            GameObject obj = Instantiate(_prefab);
-            obj.SetActive(false);
+            Meteorite obj = Instantiate(_prefab);
+            obj.gameObject.SetActive(false);
             _pool.Enqueue(obj);
         }
 
@@ -54,9 +54,10 @@ public class MeteoriteSpawnCircle : MonoBehaviour
         );
 
         // Берём объект из пула и активируем его
-        GameObject obj = _pool.Dequeue();
+        Meteorite obj = _pool.Dequeue();
         obj.transform.position = spawnPosition;
-        obj.SetActive(true);
+        obj.gameObject.SetActive(true);
+        obj.Init();
 
         // Возвращаем в конец очереди
         _pool.Enqueue(obj);

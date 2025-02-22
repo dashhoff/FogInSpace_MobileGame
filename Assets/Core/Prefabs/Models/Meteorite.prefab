@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6120818145458436454}
   - component: {fileID: 8033331990513222405}
   - component: {fileID: 5842675698909127614}
-  - component: {fileID: 7595913361777708597}
   - component: {fileID: 647943591665804097}
   - component: {fileID: 3978213498982503655}
   - component: {fileID: 5437610102272319952}
@@ -104,24 +103,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121af74927532ba40a0a72a44c577199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _randomDirection: {x: -2, y: 2, z: 0}
-  _randomTorque: {x: -2, y: 2, z: 0}
+  _randomScale: {x: 1, y: 10}
+  _randomScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.061621547
+      outSlope: 0.061621547
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.11344071
+    - serializedVersion: 3
+      time: 0.9506075
+      value: 0.19620427
+      inSlope: -0.054278135
+      outSlope: -0.054278135
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.34738785
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 3.5893965
+      outSlope: 3.5893965
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.021737218
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _randomDirection: {x: -10, y: 10}
+  _randomTorque: {x: -10, y: 10}
   _rb: {fileID: 647943591665804097}
---- !u!114 &7595913361777708597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616299693947765615}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1dbfd39d37707b49897d8cd059c4911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _delay: 60
-  _shrink: 1
-  _shrinkDuration: 0.5
 --- !u!54 &647943591665804097
 Rigidbody:
   m_ObjectHideFlags: 0

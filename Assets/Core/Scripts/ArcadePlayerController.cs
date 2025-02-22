@@ -8,7 +8,6 @@ public class ArcadePlayerController : MonoBehaviour
     [Header("Engines")]
     [SerializeField] private Engine[] _engines;
 
-    [SerializeField] private Engine[] _staticEngines;
     [SerializeField] private Engine[] _rotatingEngines;
 
     [Header("Engine Settings")]
