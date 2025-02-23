@@ -63,6 +63,8 @@ public class Player_Level1 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("FinishZone"))
         {
+            if (Victoried) return;
+
             Victoried = true;
 
             EventController.Instance.Victoried();
@@ -75,6 +77,8 @@ public class Player_Level1 : MonoBehaviour
         {
             if (_hp <= 0)
             {
+                if (Defeated || Victoried) yield return null;
+
                 Defeated = true;
 
                 EventController.Instance.Defeated();
