@@ -6,11 +6,11 @@ public class UIController_Level_1 : MonoBehaviour
 {
     public static UIController_Level_1 Instance;
 
-    [SerializeField] private GameObject _mainPanel;
+    [SerializeField] private UIPanel _mainPanel;
 
-    [SerializeField] private GameObject _victoryPanel;
+    [SerializeField] private UIPanel _victoryPanel;
 
-    [SerializeField] private GameObject _defeaPanel;
+    [SerializeField] private UIPanel _defeaPanel;
 
     [SerializeField] private DOFade _attentionPanel;
 
@@ -57,15 +57,15 @@ public class UIController_Level_1 : MonoBehaviour
 
     private void Victory()
     {
-        _mainPanel.SetActive(false);
+        _mainPanel.Close();
 
-
+        _victoryPanel.Open();
     }
 
     private void Defeat()
     {
-        _mainPanel.SetActive(false);
+        _mainPanel.Close();
 
-
+        _defeaPanel.Open();
     }
 }

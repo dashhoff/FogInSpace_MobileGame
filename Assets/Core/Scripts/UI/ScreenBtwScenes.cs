@@ -9,7 +9,7 @@ public class ScreenBtwScenes : MonoBehaviour
     [SerializeField] private Ease _ease;
     [SerializeField] private float _fadeTime = 0.5f;
 
-    public void Start()
+    private void Start()
     {
         FadeOut();
     }
@@ -24,6 +24,16 @@ public class ScreenBtwScenes : MonoBehaviour
             .OnComplete(() => SceneLoader.Instance.LoadLevelId());
     }
 
+    public void FadeInMenu()
+    {
+        _fadePanel.gameObject.SetActive(true);
+
+        DOTween.Sequence()
+            .SetUpdate(true)
+            .Append(_fadePanel.DOFade(1f, _fadeTime))
+            .OnComplete(() => SceneLoader.Instance.LoadSceneId(0));
+    }
+
     public void FadeOut()
     {
         _fadePanel.gameObject.SetActive(true);
@@ -33,5 +43,15 @@ public class ScreenBtwScenes : MonoBehaviour
             .SetUpdate(true)
             .Append(_fadePanel.DOFade(0f, _fadeTime))
             .OnComplete(() => _fadePanel.gameObject.SetActive(false));
+    }
+
+    public void FadeInRestart()
+    {
+        _fadePanel.gameObject.SetActive(true);
+
+        DOTween.Sequence()
+            .SetUpdate(true)
+            .Append(_fadePanel.DOFade(1f, _fadeTime))
+            .OnComplete(() => SceneLoader.Instance.RestartScene());
     }
 }

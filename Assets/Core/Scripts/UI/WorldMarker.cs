@@ -9,6 +9,7 @@ public class WorldMarker : MonoBehaviour
     [SerializeField] private TMP_Text _distanceText;  // Текст с расстоянием
     [SerializeField] private Camera _mainCamera;  // Камера игрока
     [SerializeField] private float _borderOffset = 50f; // Отступ от краев экрана
+    [SerializeField] private float _floatOffset = 0;
 
     private void Update()
     {
@@ -34,7 +35,7 @@ public class WorldMarker : MonoBehaviour
         _marker.rotation = Quaternion.Euler(0, 0, angle);
 
         // 6. Обновляем расстояние
-        float distance = Vector3.Distance(_mainCamera.transform.position, _target.position);
+        float distance = Vector3.Distance(_mainCamera.transform.position, _target.position) - _floatOffset;
        
         if (Settings.Instance.Language == "ru")
             _distanceText.text = $"Расстояние: {Mathf.RoundToInt(distance)} м";

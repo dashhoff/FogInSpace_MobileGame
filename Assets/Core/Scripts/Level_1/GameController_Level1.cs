@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GameController_Level1 : MonoBehaviour
+public class GameController_Level_1 : MonoBehaviour
 {
-    public static GameController_Level1 Instance;
+    public static GameController_Level_1 Instance;
 
     private void Awake()
     {
@@ -12,17 +12,27 @@ public class GameController_Level1 : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void OnEnable()
+    {
+        EventController.Victory += Victory;
+    }
+
+    private void OnDisable()
+    {
+        EventController.Victory -= Victory;
+    }
+
     public void StartGame()
     {
 
     }
 
-    public void LoseGame()
+    public void Defeat()
     {
         
     }
 
-    public void FinishGame()
+    public void Victory()
     {
         Saves.Level = 2;
     }
