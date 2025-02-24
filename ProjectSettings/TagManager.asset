@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FinishZone
   - Meteorite
+  - SpaceBomb
   layers:
   - Default
   - TransparentFX

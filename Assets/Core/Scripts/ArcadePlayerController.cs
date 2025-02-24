@@ -14,8 +14,12 @@ public class ArcadePlayerController : MonoBehaviour
     [SerializeField] private float _power;
     [SerializeField] private float _powerPercentage;
 
+    [Header("Forsage Settings")]
     [SerializeField] private bool _forsageMode;
     [SerializeField] private float _forsageMultiplier;
+
+    [SerializeField] private float _forsageEndurance = 100;
+    [SerializeField] private float _forsageEnduranceRegeneration = 2;
 
     [Header("Rotating")]
     [SerializeField] private bool _leftRotating;

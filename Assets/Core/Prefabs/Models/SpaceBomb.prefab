@@ -11,11 +11,13 @@ GameObject:
   - component: {fileID: 1934712921365134018}
   - component: {fileID: 3203101421947700636}
   - component: {fileID: 1399659225167215523}
+  - component: {fileID: 6077576216127570465}
+  - component: {fileID: 3218050338792362741}
   - component: {fileID: 4946946059281212208}
   - component: {fileID: 4747107158904180102}
   m_Layer: 0
   m_Name: SpaceBomb
-  m_TagString: Untagged
+  m_TagString: SpaceBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,6 +90,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6077576216127570465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863780418533225348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd72a2bd3a1a774c873276faeab60de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _exloded: 0
+  _explosionPower: 2500
+  _explosionRadius: 250
+  _rb: {fileID: 4946946059281212208}
+  _explosionParticle: {fileID: 0}
+  _explosionEffect: {fileID: 2476385710401933122, guid: 9fe151d5778441d47b3cf262b5e27166, type: 3}
+--- !u!114 &3218050338792362741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863780418533225348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96831c9ed008e0a45a3e92db13c612a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 4946946059281212208}
 --- !u!54 &4946946059281212208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,7 +146,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 6
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!135 &4747107158904180102
 SphereCollider:

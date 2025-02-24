@@ -19,6 +19,7 @@ public class DORotate : MonoBehaviour
     private void StartRotation()
     {
         DOTween.Sequence()
+            .SetUpdate(true)
             .Append(transform.DORotate(transform.rotation.eulerAngles + _rotationAngle, _rotationDuration, RotateMode.LocalAxisAdd).SetEase(Ease.Linear))
             .AppendInterval(_delayAfterRotation)
             .SetLoops(_loop ? -1 : 0, LoopType.Restart);

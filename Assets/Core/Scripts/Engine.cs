@@ -60,7 +60,7 @@ public class Engine : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawRay(_model.transform.position, -_model.transform.right * 10f, Color.green);
+        Debug.DrawRay(_model.transform.position, _model.transform.up * 10f, Color.green);
     }
 
     public void SetPower(float value)
@@ -86,7 +86,7 @@ public class Engine : MonoBehaviour
     public void RotateEngine(Vector2 targetDirection)
     {
         // ¬ычисление угла между текущим направлением и целевым
-        float targetAngle = Mathf.Atan2(-targetDirection.y, -targetDirection.x) * Mathf.Rad2Deg;
+        float targetAngle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90;
 
         // ѕлавное вращение двигател€
         float newAngle = Mathf.MoveTowardsAngle(
@@ -152,7 +152,7 @@ public class Engine : MonoBehaviour
         {
             OverheatidEngine();
 
-            Vector2 forceDirection = -_model.transform.right;
+            Vector2 forceDirection = _model.transform.up;
 
             if (_forsageMode)
             {

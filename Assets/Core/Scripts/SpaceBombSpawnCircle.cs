@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteoriteSpawnCircle : MonoBehaviour
+public class SpaceBombSpawnCircle : MonoBehaviour
 {
-    [SerializeField] private Meteorite _prefab;
+    [SerializeField] private SpaceBomb _prefab;
     [SerializeField] private Transform _target;
 
     [SerializeField] private int _poolSize = 500;
@@ -12,17 +12,17 @@ public class MeteoriteSpawnCircle : MonoBehaviour
     [SerializeField] private float _spawnDistance = 5f;
     [SerializeField] private float _spawnWidth = 2f;
 
-    private Queue<Meteorite> _pool;
-    private List<Meteorite> _activeMeteorites = new List<Meteorite>();
+    private Queue<SpaceBomb> _pool;
+    private int _currentIndex = 0;
 
     private void Start()
     {
         // Инициализируем пул объектов
-        _pool = new Queue<Meteorite>();
+        _pool = new Queue<SpaceBomb>();
 
         for (int i = 0; i < _poolSize; i++)
         {
-            Meteorite obj = Instantiate(_prefab);
+            SpaceBomb obj = Instantiate(_prefab);
             obj.gameObject.SetActive(false);
             _pool.Enqueue(obj);
         }
@@ -39,26 +39,9 @@ public class MeteoriteSpawnCircle : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        // Проверяем, какие метеориты вышли за границу
-        for (int i = _activeMeteorites.Count - 1; i >= 0; i--)
-        {
-            Meteorite obj = _activeMeteorites[i];
-
-            if (Vector2.Distance(obj.transform.position, _target.position) > _spawnDistance * 1.5f)
-            {
-                // Деактивируем, убираем из активного списка и возвращаем в пул
-                obj.gameObject.SetActive(false);
-                _activeMeteorites.RemoveAt(i);
-                _pool.Enqueue(obj);
-            }
-        }
-    }
-
     private void SpawnPrefab()
     {
-        if (_target == null || _pool.Count == 0) return;
+        if (_target == null) return;
 
         // Вычисляем случайный угол и смещение
         float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
@@ -71,18 +54,17 @@ public class MeteoriteSpawnCircle : MonoBehaviour
         );
 
         // Берём объект из пула и активируем его
-        Meteorite obj = _pool.Dequeue();
+        SpaceBomb obj = _pool.Dequeue();
         obj.transform.position = spawnPosition;
         obj.gameObject.SetActive(true);
-        obj.Init();
 
-        // Добавляем в активный список
-        _activeMeteorites.Add(obj);
+        // Возвращаем в конец очереди
+        _pool.Enqueue(obj);
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.green;
+        Gizmos.color = new Color(1, 0, 0, 1f);
         Gizmos.DrawWireSphere(transform.position, _spawnDistance);
         Gizmos.DrawWireSphere(transform.position, _spawnDistance - _spawnWidth);
         Gizmos.DrawWireSphere(transform.position, _spawnDistance + _spawnWidth);

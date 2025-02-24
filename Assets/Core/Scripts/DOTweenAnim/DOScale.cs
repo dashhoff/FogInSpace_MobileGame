@@ -21,6 +21,7 @@ public class DOScale : MonoBehaviour
     public void Init()
     {
         DOTween.Sequence()
+            .SetUpdate(true)
             .AppendInterval(_autoStartDelay)
             .SetEase(_ease)
             .Append(_target.transform.DOScale(0f, _duration));
