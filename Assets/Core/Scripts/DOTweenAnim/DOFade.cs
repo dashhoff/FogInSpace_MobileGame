@@ -26,6 +26,7 @@ public class DOFade : MonoBehaviour
     public void Init()
     {
         DOTween.Sequence()
+            .SetUpdate(true)
             .AppendInterval(_startDelay)
             .Append(_target.DOFade(0, _duration));
     }
@@ -33,12 +34,14 @@ public class DOFade : MonoBehaviour
     public void FadeIn()
     {
         DOTween.Sequence()
+            .SetUpdate(true)
             .Append(_target.DOFade(_maxFade, _duration));
     }
 
     public void FadeOut()
     {
         DOTween.Sequence()
+            .SetUpdate(true)
             .Append(_target.DOFade(_minFade, _duration));
     }
 

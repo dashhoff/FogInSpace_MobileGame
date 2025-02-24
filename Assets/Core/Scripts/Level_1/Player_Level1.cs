@@ -57,6 +57,13 @@ public class Player_Level1 : MonoBehaviour
 
             Damage(1f);
         }
+
+        if (collision.gameObject.CompareTag("SpaceBomb"))
+        {
+            EventController.Instance.GetDamage();
+
+            Damage(10f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -11,6 +11,10 @@ public class EventController : MonoBehaviour
 
     public static event Action Defeat;
 
+    public static event Action PauseOn;
+
+    public static event Action PauseOff;
+
     private void Awake()
     {
         if(Instance == null)
@@ -38,5 +42,19 @@ public class EventController : MonoBehaviour
         Debug.Log("Defeat!");
 
         Defeat?.Invoke();
+    }
+
+    public void Paused()
+    {
+        Debug.Log("Paused!");
+
+        PauseOn?.Invoke();
+    }
+
+    public void UnPaused()
+    {
+        Debug.Log("Unpaused!");
+
+        PauseOff?.Invoke();
     }
 }

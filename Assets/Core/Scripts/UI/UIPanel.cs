@@ -15,6 +15,7 @@ public class UIPanel : MonoBehaviour
         _panel.SetActive(false);
 
         DOTween.Sequence()
+            .SetUpdate(true)
             .Append(_background.DOFade(0, _duration))
             .OnComplete(() =>
             {
@@ -27,6 +28,7 @@ public class UIPanel : MonoBehaviour
         _background.gameObject.SetActive(true);
 
         DOTween.Sequence()
+            .SetUpdate(true)
             .Append(_background.DOFade(0,0))
             .Append(_background.DOFade(_alpha, _duration)).OnComplete(() =>
             {

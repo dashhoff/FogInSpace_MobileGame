@@ -101,6 +101,7 @@
     <Compile Include="Assets\Core\Scripts\DOTweenAnim\DOScale.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Core\Scripts\UI\UIController.cs" />
+    <Compile Include="Assets\Core\Scripts\SpaceBomb.cs" />
     <Compile Include="Assets\Core\Scripts\PlayerController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Core\Scripts\DynamicResolution.cs" />
+    <Compile Include="Assets\Core\Scripts\SleepOnInvisible.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Core\Scripts\MeteoriteSpawn.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
@@ -122,6 +124,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Core\Scripts\Scenes\MenuController.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\Core\Scripts\SpaceBombSpawnCircle.cs" />
     <Compile Include="Assets\Core\Scripts\EventController.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
@@ -138,6 +141,7 @@
     <Compile Include="Assets\Core\Scripts\UI\WorldMarker.cs" />
     <Compile Include="Assets\Core\Scripts\Saves.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Core\Scripts\Pause.cs" />
     <Compile Include="Assets\Core\Scripts\Level_1\Player_Level1.cs" />
     <Compile Include="Assets\Core\Scripts\EntryPoint.cs" />
     <Compile Include="Assets\Core\Scripts\UI\UIPopup.cs" />

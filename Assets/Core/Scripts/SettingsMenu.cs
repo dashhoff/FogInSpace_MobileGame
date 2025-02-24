@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
@@ -98,7 +99,14 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetPostProcessig()
     {
-        _postProcessVolume.enabled = _postProcessingToggle.isOn;
+        //_postProcessVolume.enabled = _postProcessingToggle.isOn;
+
+        /*if (_postProcessVolume == null || _postProcessVolume.profile == null) return;
+
+        foreach (var component in _postProcessVolume.profile.components)
+        {
+            component.active = _postProcessingToggle.isOn;
+        }*/
 
         Settings.Instance.PostProcessingEnabled = _postProcessingToggle.isOn;
 
@@ -108,7 +116,7 @@ public class SettingsMenu : MonoBehaviour
     {
         _postProcessingToggle.isOn = Settings.Instance.PostProcessingEnabled;
 
-        _postProcessVolume.enabled = _postProcessingToggle.isOn;
+        //_postProcessVolume.enabled = _postProcessingToggle.isOn;
 
         for (int i = 0; i < _universalRendererDatas.Length; i++)
         {

@@ -39,6 +39,7 @@ public class DOMove : MonoBehaviour
         Transform targetPoint = _points[index];
 
         transform.DOMove(targetPoint.position, _moveDuration)
+            .SetUpdate(true)
             .SetEase(_ease)
             .OnComplete(() =>
             {

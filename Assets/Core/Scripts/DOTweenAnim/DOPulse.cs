@@ -23,6 +23,7 @@ public class PulseEffect : MonoBehaviour
     private void StartPulse()
     {
         DOTween.Sequence()
+            .SetUpdate(true)
             .Append(transform.DOScale(_endScale, _endPhaseDuration).SetEase(Ease.InOutSine))
             .AppendInterval(_delayAfterEndPhase)
             .Append(transform.DOScale(_startScale, _startPhaseDuration).SetEase(Ease.InOutSine))
