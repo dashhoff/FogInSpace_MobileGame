@@ -34,6 +34,7 @@ public class ArcadePlayerController : MonoBehaviour
     [Header("Other")]
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Joystick _moveJoystick;
+    [SerializeField] private MainJoystick _mainJoystick;
 
     private void Awake()
     {
@@ -76,7 +77,7 @@ public class ArcadePlayerController : MonoBehaviour
         EventController.Defeat -= OffAllEngine;
     }
 
-    private void PlayerInput()
+    /*private void PlayerInput()
     {
         if (Player_Level1.Instance.Defeated || Player_Level1.Instance.Victoried) return;
 
@@ -109,6 +110,49 @@ public class ArcadePlayerController : MonoBehaviour
         }
 
         if (_moveJoystick.Horizontal == 0 && _moveJoystick.Vertical == 0)
+        {
+            _powerPercentage = 0;
+
+            foreach (Engine engine in _engines)
+            {
+                OffEngine(engine);
+            }
+        }
+    }*/
+
+    private void PlayerInput()
+    {
+        if (Player_Level1.Instance.Defeated || Player_Level1.Instance.Victoried) return;
+
+        Vector2 joystickInput = new Vector2(_mainJoystick.Direction.x, _mainJoystick.Direction.y);
+
+        //float powerPercentage = 1;
+
+        if (_mainJoystick.Direction.y > 0 && _mainJoystick.Direction.x > 0)
+            _powerPercentage = Mathf.Max(_mainJoystick.Direction.y, _mainJoystick.Direction.x);
+
+        if (_mainJoystick.Direction.y > 0 && _mainJoystick.Direction.x < 0)
+            _powerPercentage = Mathf.Max(_mainJoystick.Direction.y, -_mainJoystick.Direction.x);
+
+        if (_mainJoystick.Direction.y < 0 && _mainJoystick.Direction.x > 0)
+            _powerPercentage = Mathf.Max(-_mainJoystick.Direction.y, _mainJoystick.Direction.x);
+
+        if (_mainJoystick.Direction.y < 0 && _mainJoystick.Direction.x < 0)
+            _powerPercentage = Mathf.Max(-_mainJoystick.Direction.y, -_mainJoystick.Direction.x);
+
+        if (_mainJoystick.Direction.y > _moveJoystick.DeadZone
+            || _mainJoystick.Direction.y < -_moveJoystick.DeadZone
+            || _mainJoystick.Direction.x > _moveJoystick.DeadZone
+            || _mainJoystick.Direction.x < -_moveJoystick.DeadZone)
+        {
+            foreach (var engine in _rotatingEngines)
+            {
+                engine.RotateEngine(joystickInput);
+                OnEngine(engine, _powerPercentage);
+            }
+        }
+
+        if (_mainJoystick.Direction.x == 0 && _moveJoystick.Vertical == 0)
         {
             _powerPercentage = 0;
 
