@@ -42,6 +42,11 @@ public class Engine : MonoBehaviour
     [SerializeField] private Rigidbody _shipRb;
 
     [Space(20f)]
+    [Header("FX")]
+    [SerializeField] private ParticleSystem _engineParticle;
+    [SerializeField] private float _maxLifeTimeFX = 0.5f;
+
+    [Space(20f)]
     [Header("VFX")]
     [SerializeField] private VisualEffect _engineEffect;
 
@@ -179,6 +184,11 @@ public class Engine : MonoBehaviour
 
             SetLifeTimeVFX();
             SetSpeedVFX();
+
+            SetLifeTimeFX();
+
+            _engineParticle.Play();
+
             _engineEffect.Play();
         }
         else
@@ -186,6 +196,8 @@ public class Engine : MonoBehaviour
             CoolingEngine();
 
             RepaireEngine();
+
+            _engineParticle.Stop();
 
             _engineEffect.Stop();
         }
@@ -238,6 +250,11 @@ public class Engine : MonoBehaviour
     public float GetHP()
     {
         return _hp;
+    }
+
+    public void SetLifeTimeFX()
+    {
+        _engineParticle.startLifetime = _maxLifeTimeFX * _powerPercentage;
     }
 
     public void SetLifeTimeVFX()
