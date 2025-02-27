@@ -9760,6 +9760,8 @@ MonoBehaviour:
   _repairingSpeed: 0
   _model: {fileID: 3868015062256997872}
   _shipRb: {fileID: 0}
+  _engineParticle: {fileID: 8903240580889560803}
+  _maxLifeTimeFX: 0.5
   _engineEffect: {fileID: 6143442134399097349}
   _minLifeTimeVFX: 0.01
   _maxLifeTimeVFX: 0.1

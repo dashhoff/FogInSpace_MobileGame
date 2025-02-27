@@ -116042,6 +116042,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2086851783}
     m_Modifications:
     - target: {fileID: 3533896199937449102, guid: c32cb0feb8f9e5c4299ba3c398aec97a, type: 3}
+      propertyPath: _power
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533896199937449102, guid: c32cb0feb8f9e5c4299ba3c398aec97a, type: 3}
       propertyPath: _mainJoystick
       value: 
       objectReference: {fileID: 1741489848414338468}
@@ -120414,6 +120418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handle: {fileID: 1741489847591222873}
+  _input: {x: 0, y: 0}
 --- !u!1001 &3048606912130969024
 PrefabInstance:
   m_ObjectHideFlags: 0

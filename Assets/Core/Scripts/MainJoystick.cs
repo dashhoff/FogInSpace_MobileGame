@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class MainJoystick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private RectTransform _handle;
-    private Vector2 _input;
+    [SerializeField]  private Vector2 _input;
 
     public Vector2 Direction => _input;
 
