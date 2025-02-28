@@ -13,7 +13,7 @@ public class Player_Level1 : MonoBehaviour
     [SerializeField] private bool _canRepairing = true;
 
     [SerializeField] private float _maxHp = 100;
-    [SerializeField] private float _hp;
+    [Min(0)] [SerializeField] private float _hp;
     [SerializeField] private float _repairTime = 1; //1 hp regenerates in 1 sec
 
     [Header("Other")]
@@ -42,6 +42,9 @@ public class Player_Level1 : MonoBehaviour
     public void Damage(float damage)
     {
         _hp -= damage;
+
+        if (_hp < 0)
+            _hp = 0;
     }
 
     public float GetHP()
@@ -53,16 +56,20 @@ public class Player_Level1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Meteorite"))
         {
-            EventController.Instance.GetDamage();
+            if (Defeated || Victoried) return;
 
             Damage(1f);
+
+            EventController.Instance.GetDamage();
         }
 
         if (collision.gameObject.CompareTag("SpaceBomb"))
         {
-            EventController.Instance.GetDamage();
+            if (Defeated || Victoried) return;
 
             Damage(10f);
+
+            EventController.Instance.GetDamage();
         }
     }
 
