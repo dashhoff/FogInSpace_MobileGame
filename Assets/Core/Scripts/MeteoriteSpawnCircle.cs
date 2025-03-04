@@ -28,6 +28,7 @@ public class MeteoriteSpawnCircle : MonoBehaviour
         }
 
         StartCoroutine(SpawnRoutine());
+        StartCoroutine(ActiveMeteoritesCotorutine());
     }
 
     private IEnumerator SpawnRoutine()
@@ -39,7 +40,7 @@ public class MeteoriteSpawnCircle : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         // Проверяем, какие метеориты вышли за границу
         for (int i = _activeMeteorites.Count - 1; i >= 0; i--)
@@ -52,6 +53,27 @@ public class MeteoriteSpawnCircle : MonoBehaviour
                 obj.gameObject.SetActive(false);
                 _activeMeteorites.RemoveAt(i);
                 _pool.Enqueue(obj);
+            }
+        }
+    }*/
+
+    private IEnumerator ActiveMeteoritesCotorutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSecondsRealtime(1f);
+
+            for (int i = _activeMeteorites.Count - 1; i >= 0; i--)
+            {
+                Meteorite obj = _activeMeteorites[i];
+
+                if (Vector2.Distance(obj.transform.position, _target.position) > _spawnDistance * 1.5f)
+                {
+                    // Деактивируем, убираем из активного списка и возвращаем в пул
+                    obj.gameObject.SetActive(false);
+                    _activeMeteorites.RemoveAt(i);
+                    _pool.Enqueue(obj);
+                }
             }
         }
     }

@@ -116053,6 +116053,10 @@ PrefabInstance:
       propertyPath: _moveJoystick
       value: 
       objectReference: {fileID: 2052774029}
+    - target: {fileID: 3533896199937449102, guid: c32cb0feb8f9e5c4299ba3c398aec97a, type: 3}
+      propertyPath: _forsageConsumptionRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5511368216169481058, guid: c32cb0feb8f9e5c4299ba3c398aec97a, type: 3}
       propertyPath: m_Name
       value: Player_v3
@@ -116146,6 +116150,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efa43037ee395e94896384f5f30aa27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2053476247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3533896199937449102, guid: c32cb0feb8f9e5c4299ba3c398aec97a, type: 3}
+  m_PrefabInstance: {fileID: 2053476244}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2860f948e4d2774ba8b0252e7a20275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2055864348
@@ -117943,8 +117958,10 @@ MonoBehaviour:
   _victoryPanel: {fileID: 460717624}
   _defeaPanel: {fileID: 1016223318}
   _attentionPanel: {fileID: 1453441210}
+  _playerController: {fileID: 2053476247}
   _player: {fileID: 2053476246}
   _hpBar: {fileID: 1606691024}
+  _forsageBar: {fileID: 183998561}
 --- !u!1 &2096562565
 GameObject:
   m_ObjectHideFlags: 0

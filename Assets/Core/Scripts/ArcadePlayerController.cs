@@ -18,7 +18,9 @@ public class ArcadePlayerController : MonoBehaviour
     [SerializeField] private bool _forsageMode;
     [SerializeField] private float _forsageMultiplier;
 
+    [SerializeField] private float _maxForsageEndurance = 100;
     [SerializeField] private float _forsageEndurance = 100;
+    [SerializeField] private float _forsageConsumptionRate = 5;
     [SerializeField] private float _forsageEnduranceRegeneration = 2;
 
     [Header("Rotating")]
@@ -59,6 +61,8 @@ public class ArcadePlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         RotateShip();
+
+        MainCycle();
     }
 
     private void Update()
@@ -122,6 +126,29 @@ public class ArcadePlayerController : MonoBehaviour
             }
         }
     }*/
+
+    private void MainCycle()
+    {
+        if (_forsageMode)
+        {
+            _forsageEndurance -= _forsageConsumptionRate;
+
+            if (_forsageEndurance > 0)
+                EnableForsageInEngines();
+            else
+                _forsageMode = false;
+        }
+        else
+        {
+            DisableForsageInEngines();
+
+            if (_forsageEndurance < _maxForsageEndurance)
+                _forsageEndurance += _forsageEnduranceRegeneration;
+
+            if (_forsageEndurance > _maxForsageEndurance)
+                _forsageEndurance = _maxForsageEndurance;
+        }
+    }
 
     private void PlayerInput()
     {
@@ -246,13 +273,38 @@ public class ArcadePlayerController : MonoBehaviour
         AudioController.Instance.SetVolume("TurbineSound", _powerPercentage / 10);
     }
 
+    public void EnableForsageInEngines()
+    {
+        foreach (Engine engine in _engines)
+        {
+            engine.StartForsage();
+        }
+    }
+
+    public void DisableForsageInEngines()
+    {
+        foreach (Engine engine in _engines)
+        {
+            engine.StopForsage();
+        }
+    }
+
     public void EnableForsage()
     {
         _forsageMode = true;
+
+        Debug.Log("ForsageON");
     }
 
     public void DisableForsage()
     {
         _forsageMode = false;
+
+        Debug.Log("ForsageOFF");
+    }
+
+    public float GetForsage()
+    {
+        return _forsageEndurance;
     }
 }

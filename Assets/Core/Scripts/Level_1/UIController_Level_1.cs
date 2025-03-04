@@ -15,8 +15,11 @@ public class UIController_Level_1 : MonoBehaviour
     [SerializeField] private DOFade _attentionPanel;
 
     [Space(20f)]
+    [SerializeField] private ArcadePlayerController _playerController;
     [SerializeField] private Player_Level1 _player;
+
     [SerializeField] private Image _hpBar;
+    [SerializeField] private Image _forsageBar;
 
     private void Awake()
     {
@@ -48,6 +51,11 @@ public class UIController_Level_1 : MonoBehaviour
     public void UpdateHPBar()
     {
         _hpBar.fillAmount = _player.GetHP() / 100;
+    }
+
+    public void UpdateForsageBar()
+    {
+        _forsageBar.fillAmount = _playerController.GetForsage() / 100;
     }
 
     private void PulseAttention()
