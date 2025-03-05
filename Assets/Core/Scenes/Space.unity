@@ -16205,18 +16205,18 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 0.9829347, g: 1, b: 0, a: 1}
-        key2: {r: 1, g: 0.30879685, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.98764336, g: 1, b: 0.21226418, a: 1}
+        key2: {r: 1, g: 0.4693304, b: 0.23113209, a: 0}
+        key3: {r: 0.21226418, g: 0.34818703, b: 1, a: 0}
+        key4: {r: 0.658805, g: 0.2688679, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 32768
-        ctime2: 65535
-        ctime3: 0
-        ctime4: 0
+        ctime1: 16384
+        ctime2: 32768
+        ctime3: 49151
+        ctime4: 65535
         ctime5: 0
         ctime6: 0
         ctime7: 0
@@ -16230,7 +16230,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -16582,7 +16582,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 2500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -48265,7 +48265,7 @@ Transform:
   m_GameObject: {fileID: 892901216}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2500}
+  m_LocalPosition: {x: 0, y: 0, z: 2500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48542,18 +48542,18 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 0.9829347, g: 1, b: 0, a: 1}
-        key2: {r: 1, g: 0.30879685, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.98764336, g: 1, b: 0.21226418, a: 1}
+        key2: {r: 1, g: 0.4693304, b: 0.23113209, a: 0}
+        key3: {r: 0.21226418, g: 0.34818703, b: 1, a: 0}
+        key4: {r: 0.658805, g: 0.2688679, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 32768
-        ctime2: 65535
-        ctime3: 0
-        ctime4: 0
+        ctime1: 16384
+        ctime2: 32768
+        ctime3: 49151
+        ctime4: 65535
         ctime5: 0
         ctime6: 0
         ctime7: 0
@@ -48567,7 +48567,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -48602,7 +48602,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 50
+      scalar: 25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -48919,7 +48919,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 2500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -63511,7 +63511,7 @@ Transform:
   m_GameObject: {fileID: 1194078968}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1000}
+  m_LocalPosition: {x: 0, y: 0, z: 1000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63788,18 +63788,18 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 0.9829347, g: 1, b: 0, a: 1}
-        key2: {r: 1, g: 0.30879685, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.98764336, g: 1, b: 0.21226418, a: 1}
+        key2: {r: 1, g: 0.4693304, b: 0.23113209, a: 0}
+        key3: {r: 0.21226418, g: 0.34818703, b: 1, a: 0}
+        key4: {r: 0.658805, g: 0.2688679, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 32768
-        ctime2: 65535
-        ctime3: 0
-        ctime4: 0
+        ctime1: 16384
+        ctime2: 32768
+        ctime3: 49151
+        ctime4: 65535
         ctime5: 0
         ctime6: 0
         ctime7: 0
@@ -63813,7 +63813,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 3
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -63848,8 +63848,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 25
-      minScalar: 5
+      scalar: 15
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -64165,7 +64165,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 1000
+    maxNumParticles: 2500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -64431,7 +64431,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 150
+      scalar: 75
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -83686,6 +83686,7 @@ MonoBehaviour:
   _maxHp: 100
   _hp: 100
   _repairTime: 3
+  _sparksParticle: {fileID: 0}
   _shipRb: {fileID: 1631128092}
 --- !u!1 &1636920947
 GameObject:
@@ -110452,6 +110453,7 @@ MonoBehaviour:
   _maxHp: 100
   _hp: 1
   _repairTime: 1
+  _sparksParticle: {fileID: 0}
   _shipRb: {fileID: 1914091279}
 --- !u!1 &1919262185
 GameObject:
@@ -116041,6 +116043,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2086851783}
     m_Modifications:
+    - target: {fileID: 113599330626865958, guid: c32cb0feb8f9e5c4299ba3c398aec97a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707335322199498609, guid: c32cb0feb8f9e5c4299ba3c398aec97a, type: 3}
+      propertyPath: _sparksParticle
+      value: 
+      objectReference: {fileID: 3473418239905963133, guid: b697e1ae7ceacfb40990043ae203c19b, type: 3}
     - target: {fileID: 3533896199937449102, guid: c32cb0feb8f9e5c4299ba3c398aec97a, type: 3}
       propertyPath: _power
       value: 30
