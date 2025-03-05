@@ -16,6 +16,9 @@ public class Player_Level1 : MonoBehaviour
     [Min(0)] [SerializeField] private float _hp;
     [SerializeField] private float _repairTime = 1; //1 hp regenerates in 1 sec
 
+    [Header("Particle")]
+    [SerializeField] private ParticleSystem _sparksParticle;
+
     [Header("Other")]
     [SerializeField] private Rigidbody _shipRb;
 
@@ -60,6 +63,9 @@ public class Player_Level1 : MonoBehaviour
 
             Damage(1f);
 
+            ContactPoint contact = collision.GetContact(0);
+            Instantiate(_sparksParticle, contact.point, Quaternion.identity);
+
             EventController.Instance.GetDamage();
         }
 
@@ -68,6 +74,9 @@ public class Player_Level1 : MonoBehaviour
             if (Defeated || Victoried) return;
 
             Damage(10f);
+
+            ContactPoint contact = collision.GetContact(0);
+            Instantiate(_sparksParticle, contact.point, Quaternion.identity);
 
             EventController.Instance.GetDamage();
         }
