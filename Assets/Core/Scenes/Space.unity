@@ -36437,7 +36437,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1788513393}
+        - m_Target: {fileID: 2053476247}
           m_TargetAssemblyTypeName: ArcadePlayerController, Assembly-CSharp
           m_MethodName: OnRightRotate
           m_Mode: 1
@@ -36453,7 +36453,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1788513393}
+        - m_Target: {fileID: 2053476247}
           m_TargetAssemblyTypeName: ArcadePlayerController, Assembly-CSharp
           m_MethodName: OffRightRotate
           m_Mode: 1
@@ -100747,17 +100747,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4903356352841776691, guid: 72d71e762af43764280334f0831f32c7, type: 3}
   m_PrefabInstance: {fileID: 1788513391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1788513393 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2282801332218964459, guid: 72d71e762af43764280334f0831f32c7, type: 3}
-  m_PrefabInstance: {fileID: 1788513391}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2860f948e4d2774ba8b0252e7a20275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1795783624
 GameObject:
   m_ObjectHideFlags: 0
@@ -120204,7 +120193,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1788513393}
+        - m_Target: {fileID: 2053476247}
           m_TargetAssemblyTypeName: ArcadePlayerController, Assembly-CSharp
           m_MethodName: OnLeftRotate
           m_Mode: 1
@@ -120220,7 +120209,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1788513393}
+        - m_Target: {fileID: 2053476247}
           m_TargetAssemblyTypeName: ArcadePlayerController, Assembly-CSharp
           m_MethodName: OffLeftRotate
           m_Mode: 1
@@ -121334,17 +121323,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4903356352841776691, guid: bcb19f534ee230c45a15eef5145f44a7, type: 3}
   m_PrefabInstance: {fileID: 3048606912130969024}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5285358788027730024 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2282801332218964459, guid: bcb19f534ee230c45a15eef5145f44a7, type: 3}
-  m_PrefabInstance: {fileID: 3048606912130969024}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2860f948e4d2774ba8b0252e7a20275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5825948973576243376
 GameObject:
   m_ObjectHideFlags: 0
@@ -121386,7 +121364,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5285358788027730024}
+        - m_Target: {fileID: 2053476247}
           m_TargetAssemblyTypeName: ArcadePlayerController, Assembly-CSharp
           m_MethodName: EnableForsage
           m_Mode: 1
@@ -121402,7 +121380,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5285358788027730024}
+        - m_Target: {fileID: 2053476247}
           m_TargetAssemblyTypeName: ArcadePlayerController, Assembly-CSharp
           m_MethodName: DisableForsage
           m_Mode: 1
