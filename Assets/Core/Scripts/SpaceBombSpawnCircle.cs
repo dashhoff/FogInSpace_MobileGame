@@ -13,7 +13,7 @@ public class SpaceBombSpawnCircle : MonoBehaviour
     [SerializeField] private float _spawnWidth = 2f;
 
     private Queue<SpaceBomb> _pool;
-    private int _currentIndex = 0;
+    private List<SpaceBomb> _activeBombs = new List<SpaceBomb>();
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class SpaceBombSpawnCircle : MonoBehaviour
         }
 
         StartCoroutine(SpawnRoutine());
+        StartCoroutine(ActiveSpaceBombCotorutine());
     }
 
     private IEnumerator SpawnRoutine()
@@ -39,9 +40,29 @@ public class SpaceBombSpawnCircle : MonoBehaviour
         }
     }
 
+    private IEnumerator ActiveSpaceBombCotorutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSecondsRealtime(1f);
+
+            for (int i = _activeBombs.Count - 1; i >= 0; i--)
+            {
+                SpaceBomb spaceBomb = _activeBombs[i];
+
+                if (Vector2.Distance(spaceBomb.transform.position, _target.position)  > _spawnDistance * 1.5)
+                {
+                    _pool.Enqueue(spaceBomb);
+                    _activeBombs.RemoveAt(i);
+                    spaceBomb.gameObject.SetActive(false);
+                }
+            }
+        }
+    }
+
     private void SpawnPrefab()
     {
-        if (_target == null) return;
+        if (_target == null || _pool.Count == 0) return;
 
         // Вычисляем случайный угол и смещение
         float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
@@ -59,7 +80,8 @@ public class SpaceBombSpawnCircle : MonoBehaviour
         obj.gameObject.SetActive(true);
 
         // Возвращаем в конец очереди
-        _pool.Enqueue(obj);
+        _activeBombs.Add(obj);
+        //_pool.Enqueue(obj);
     }
 
     private void OnDrawGizmosSelected()
