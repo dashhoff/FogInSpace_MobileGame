@@ -221,8 +221,9 @@ public class ArcadePlayerController : MonoBehaviour
 
         if (_leftRotating)
         {
-            _rb.transform.Rotate(Vector3.right * -_rotatingPower * Time.deltaTime);
-            //_rb.AddTorque(transform.up * -_rotatingPower, ForceMode.Acceleration);
+            //_rb.transform.Rotate(Vector3.forward * _rotatingPower * Time.deltaTime);
+
+            _rb.AddTorque(transform.forward * _rotatingPower, ForceMode.Acceleration);
 
             foreach (var engine in _onRightRotateEngines) engine.Stop();
             foreach (var engine in _onLeftRotateEngines) engine.Play();
@@ -230,8 +231,9 @@ public class ArcadePlayerController : MonoBehaviour
 
         if (_rightRotating)
         {
-            _rb.transform.Rotate(Vector3.right * _rotatingPower * Time.deltaTime);
-            //_rb.AddTorque(transform.forward * _rotatingPower, ForceMode.Acceleration);
+            //_rb.transform.Rotate(Vector3.forward * -_rotatingPower * Time.deltaTime);
+
+            _rb.AddTorque(transform.forward * -_rotatingPower, ForceMode.Acceleration);
 
             foreach (var engine in _onLeftRotateEngines) engine.Stop();
             foreach (var engine in _onRightRotateEngines) engine.Play();

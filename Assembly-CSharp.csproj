@@ -115,6 +115,7 @@
     <Compile Include="Assets\Core\Scripts\SettingsMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\Core\Scripts\VibrationController.cs" />
     <Compile Include="Assets\Core\Scripts\DynamicResolution.cs" />
     <Compile Include="Assets\Core\Scripts\MainJoystick.cs" />
     <Compile Include="Assets\Core\Scripts\SleepOnInvisible.cs" />
